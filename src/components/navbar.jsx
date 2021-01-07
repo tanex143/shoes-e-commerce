@@ -3,7 +3,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
   return (
-    <div className='py-3 bg-teal-300'>
+    <div className='py-3 bg-bluegray-200 shadow-md'>
       <div className='container mx-auto'>
         <div className='flex justify-between'>
           <div className='flex'>
