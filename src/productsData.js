@@ -1,4 +1,4 @@
-export const Data = () => [
+export const productsData = [
   {
     id: 1,
     title: 'Air Force',

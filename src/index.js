@@ -5,10 +5,13 @@ import reportWebVitals from './reportWebVitals';
 import 'antd/dist/antd.css';
 import './assets/main.css';
 import './assets/custom.css';
+import { ContextProvider } from './contextProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ContextProvider>
+      <App />
+    </ContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
