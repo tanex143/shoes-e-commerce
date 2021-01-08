@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -8,19 +9,22 @@ const Navbar = () => {
         <div className='flex justify-between'>
           <div className='flex'>
             <img src='logo.png' alt='logo' className='mr-1 w-16' />
-            <h1 className='text-2xl font-semibold tracking-wide logo-font'>
+            <Link
+              to='/'
+              className='text-2xl font-semibold tracking-wide logo-font'
+            >
               SHOES
-            </h1>
+            </Link>
           </div>
           <div className='flex'>
             <h1 className='mr-1 text-2xl font-semibold'>Welcome!</h1>
             <h1 className='text-2xl font-semibold'>TaneX</h1>
-            <div className='ml-10 px-2'>
+            <Link to='/mycart' className='ml-10 px-2 '>
               <FontAwesomeIcon
                 icon={faShoppingCart}
-                className='text-3xl cursor-pointer text-gray-700'
+                className='text-3xl cursor-pointer text-gray-700 hover:text-black'
               />
-            </div>
+            </Link>
           </div>
         </div>
       </div>

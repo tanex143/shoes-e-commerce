@@ -2,16 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ContextProvider } from './contextProvider';
+import { BrowserRouter } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import './assets/main.css';
 import './assets/custom.css';
-import { ContextProvider } from './contextProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ContextProvider>
-      <App />
-    </ContextProvider>
+    <BrowserRouter>
+      <ContextProvider>
+        <App />
+      </ContextProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
