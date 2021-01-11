@@ -4,9 +4,11 @@ import { ProductsContext } from '../contextProvider';
 import Card from './card';
 
 const ProductsList = () => {
-  const { allProductsData, setProductDetailsDisplay } = useContext(
-    ProductsContext
-  );
+  const {
+    allProductsData,
+    setProductDetailsDisplay,
+    thousands_separators,
+  } = useContext(ProductsContext);
   return (
     <>
       <div className='container mx-auto py-8'>
@@ -20,8 +22,9 @@ const ProductsList = () => {
               key={data.id}
               to={`/productdetails/${data.title}`}
               onClick={() => setProductDetailsDisplay(data)}
+              className='hover:text-black'
             >
-              <Card data={data} />
+              <Card data={data} thousands_separators={thousands_separators} />
             </Link>
           ))}
         </div>
