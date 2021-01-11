@@ -101,7 +101,7 @@ import zoomxvaporfly5 from './img/zoomx-vaporfly-5.jpg';
 export const productsData = [
   {
     id: 1,
-    title: 'Air Force',
+    name: 'Air Force',
     img: [
       `${airforce1}`,
       `${airforce2}`,
@@ -121,7 +121,7 @@ export const productsData = [
   },
   {
     id: 2,
-    title: 'Air Jordan Low',
+    name: 'Air Jordan Low',
     img: [
       `${airjordanlow1}`,
       `${airjordanlow2}`,
@@ -141,7 +141,7 @@ export const productsData = [
   },
   {
     id: 3,
-    title: 'Air Jordan Mid',
+    name: 'Air Jordan Mid',
     img: [
       `${airjordanmid1}`,
       `${airjordanmid2}`,
@@ -161,7 +161,7 @@ export const productsData = [
   },
   {
     id: 4,
-    title: 'Air Jordan XXXV',
+    name: 'Air Jordan XXXV',
     img: [
       `${airjordanxxxv1}`,
       `${airjordanxxxv2}`,
@@ -181,7 +181,7 @@ export const productsData = [
   },
   {
     id: 5,
-    title: 'Air Max 90',
+    name: 'Air Max 90',
     img: [
       `${airmax901}`,
       `${airmax902}`,
@@ -201,7 +201,7 @@ export const productsData = [
   },
   {
     id: 6,
-    title: 'Blazer Low',
+    name: 'Blazer Low',
     img: [
       `${blazerlow1}`,
       `${blazerlow2}`,
@@ -221,7 +221,7 @@ export const productsData = [
   },
   {
     id: 7,
-    title: 'Challenger OG',
+    name: 'Challenger OG',
     img: [
       `${challengerog1}`,
       `${challengerog2}`,
@@ -241,7 +241,7 @@ export const productsData = [
   },
   {
     id: 8,
-    title: 'Cortez',
+    name: 'Cortez',
     img: [`${cortez1}`, `${cortez2}`, `${cortez3}`, `${cortez4}`, `${cortez5}`],
     price: 7995,
     brand: 'Nike',
@@ -255,7 +255,7 @@ export const productsData = [
   },
   {
     id: 9,
-    title: 'D-Break',
+    name: 'D-Break',
     img: [`${dbreak1}`, `${dbreak2}`, `${dbreak3}`, `${dbreak4}`, `${dbreak5}`],
     price: 10999,
     brand: 'Nike',
@@ -269,7 +269,7 @@ export const productsData = [
   },
   {
     id: 10,
-    title: 'Free Metcon',
+    name: 'Free Metcon',
     img: [
       `${freemetcon1}`,
       `${freemetcon2}`,
@@ -289,7 +289,7 @@ export const productsData = [
   },
   {
     id: 11,
-    title: 'Kybrid',
+    name: 'Kybrid',
     img: [`${kybrid1}`, `${kybrid2}`, `${kybrid3}`, `${kybrid4}`, `${kybrid5}`],
     price: 10099,
     brand: 'Nike',
@@ -303,7 +303,7 @@ export const productsData = [
   },
   {
     id: 12,
-    title: 'Metcon',
+    name: 'Metcon',
     img: [`${metcon1}`, `${metcon2}`, `${metcon3}`, `${metcon4}`, `${metcon5}`],
     price: 12995,
     brand: 'Nike',
@@ -317,7 +317,7 @@ export const productsData = [
   },
   {
     id: 13,
-    title: 'Metcon Training',
+    name: 'Metcon Training',
     img: [
       `${metcontraining1}`,
       `${metcontraining2}`,
@@ -337,7 +337,7 @@ export const productsData = [
   },
   {
     id: 14,
-    title: 'React Infinity',
+    name: 'React Infinity',
     img: [
       `${reactinfinity1}`,
       `${reactinfinity2}`,
@@ -356,7 +356,7 @@ export const productsData = [
   },
   {
     id: 15,
-    title: 'SB Zoom Blazer Mid',
+    name: 'SB Zoom Blazer Mid',
     img: [
       `${sbzoomblazermid1}`,
       `${sbzoomblazermid2}`,
@@ -376,7 +376,7 @@ export const productsData = [
   },
   {
     id: 16,
-    title: 'SB Zoom Stefan',
+    name: 'SB Zoom Stefan',
     img: [
       `${sbzoomstefan1}`,
       `${sbzoomstefan2}`,
@@ -396,7 +396,7 @@ export const productsData = [
   },
   {
     id: 17,
-    title: 'Space Hippie',
+    name: 'Space Hippie',
     img: [
       `${spacehippie1}`,
       `${spacehippie2}`,
@@ -416,7 +416,7 @@ export const productsData = [
   },
   {
     id: 18,
-    title: 'Super REP',
+    name: 'Super REP',
     img: [
       `${superrep1}`,
       `${superrep2}`,
@@ -436,7 +436,7 @@ export const productsData = [
   },
   {
     id: 19,
-    title: 'Zoom Freak',
+    name: 'Zoom Freak',
     img: [
       `${zoomfreak1}`,
       `${zoomfreak2}`,
@@ -456,7 +456,7 @@ export const productsData = [
   },
   {
     id: 20,
-    title: 'Zoom-X Vaporfly',
+    name: 'Zoom-X Vaporfly',
     img: [
       `${zoomxvaporfly1}`,
       `${zoomxvaporfly2}`,

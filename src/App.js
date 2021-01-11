@@ -1,9 +1,9 @@
 import Navbar from './components/navbar';
 import ProductsList from './components/productsList';
 import { Route, Switch } from 'react-router-dom';
-import MyCart from './components/myCart';
 import Footer from './components/footer';
 import ProductDetails from './components/productDetails';
+import MyCartDetails from './components/myCartDetails';
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
           <ProductsList />
         </Route>
         <Route path='/mycart' exact>
-          <MyCart />
+          <MyCartDetails />
         </Route>
         <Route path='/productdetails/:title'>
           <ProductDetails />

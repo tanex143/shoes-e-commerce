@@ -5,7 +5,7 @@ const Card = ({ data, thousands_separators }) => {
         <img src={data.img[0]} alt='img' className='w-full h-72' />
       </div>
 
-      <h1 className='text-2xl pl-2'>{data.title}</h1>
+      <h1 className='text-2xl pl-2'>{data.name}</h1>
       <p className='text-2xl absolute left-0 bottom-0 pl-2 pb-1'>
         ₱{thousands_separators(data.price)}
       </p>

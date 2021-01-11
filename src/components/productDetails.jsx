@@ -3,9 +3,12 @@ import { ProductsContext } from '../contextProvider';
 import { Link } from 'react-router-dom';
 
 const ProductDetails = () => {
-  const { productDetailsDisplay, thousands_separators } = useContext(
-    ProductsContext
-  );
+  const {
+    productDetailsDisplay,
+    thousands_separators,
+    myCart,
+    addToCart,
+  } = useContext(ProductsContext);
 
   return (
     <>
@@ -27,7 +30,7 @@ const ProductDetails = () => {
               {productDetailsDisplay.type}
             </p>
             <h1 className='text-4xl py-2 font-semibold'>
-              {productDetailsDisplay.title}
+              {productDetailsDisplay.name}
             </h1>
             <p className='text-xl pb-2'>{productDetailsDisplay.brand}</p>
             <p>{productDetailsDisplay.description}</p>
@@ -45,9 +48,18 @@ const ProductDetails = () => {
               Php {thousands_separators(productDetailsDisplay.price)}
             </p>
             <div className='py-10 flex gap-6'>
-              <button className='py-2 px-4 bg-bluegray-500 text-white hover:bg-bluegray-600 rounded uppercase text-xl'>
-                add to cart
-              </button>
+              {productDetailsDisplay.inCart === true ? (
+                <p className='py-2 px-4 rounded bg-lime-400 uppercase text-xl'>
+                  Added to Cart
+                </p>
+              ) : (
+                <button
+                  onClick={() => addToCart(productDetailsDisplay.id)}
+                  className='py-2 px-4 bg-bluegray-500 text-white hover:bg-bluegray-600 rounded uppercase text-xl'
+                >
+                  add to cart
+                </button>
+              )}
               <Link
                 to='/'
                 className='py-2 px-4 border border-bluegray-500 hover:bg-bluegray-400 hover:text-white rounded uppercase text-xl'
@@ -59,6 +71,7 @@ const ProductDetails = () => {
         </div>
       </div>
       {console.log(productDetailsDisplay)}
+      {console.log(myCart)}
     </>
   );
 };

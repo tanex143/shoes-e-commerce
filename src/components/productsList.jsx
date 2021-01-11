@@ -20,7 +20,7 @@ const ProductsList = () => {
           {allProductsData.map((data) => (
             <Link
               key={data.id}
-              to={`/productdetails/${data.title}`}
+              to={`/productdetails/${data.name}`}
               onClick={() => setProductDetailsDisplay(data)}
               className='hover:text-black'
             >
