@@ -1,13 +1,113 @@
+import airforce1 from './img/air-force-1.jpg';
+import airforce2 from './img/air-force-2.jpg';
+import airforce3 from './img/air-force-3.jpg';
+import airforce4 from './img/air-force-4.jpg';
+import airforce5 from './img/air-force-5.jpg';
+import airjordanlow1 from './img/air-jordan-low-1.jpg';
+import airjordanlow2 from './img/air-jordan-low-2.jpg';
+import airjordanlow3 from './img/air-jordan-low-3.jpg';
+import airjordanlow4 from './img/air-jordan-low-4.jpg';
+import airjordanlow5 from './img/air-jordan-low-5.jpg';
+import airjordanmid1 from './img/air-jordan-mid-1.jpg';
+import airjordanmid2 from './img/air-jordan-mid-2.jpg';
+import airjordanmid3 from './img/air-jordan-mid-3.jpg';
+import airjordanmid4 from './img/air-jordan-mid-4.jpg';
+import airjordanmid5 from './img/air-jordan-mid-5.jpg';
+import airjordanxxxv1 from './img/air-jordan-xxxv-1.jpg';
+import airjordanxxxv2 from './img/air-jordan-xxxv-2.jpg';
+import airjordanxxxv3 from './img/air-jordan-xxxv-3.jpg';
+import airjordanxxxv4 from './img/air-jordan-xxxv-4.jpg';
+import airjordanxxxv5 from './img/air-jordan-xxxv-5.jpg';
+import airmax901 from './img/air-max-90-1.jpg';
+import airmax902 from './img/air-max-90-2.jpg';
+import airmax903 from './img/air-max-90-3.jpg';
+import airmax904 from './img/air-max-90-4.jpg';
+import airmax905 from './img/air-max-90-5.jpg';
+import blazerlow1 from './img/blazer-low-1.jpg';
+import blazerlow2 from './img/blazer-low-2.jpg';
+import blazerlow3 from './img/blazer-low-3.jpg';
+import blazerlow4 from './img/blazer-low-4.jpg';
+import blazerlow5 from './img/blazer-low-5.jpg';
+import challengerog1 from './img/challenger-og-1.jpg';
+import challengerog2 from './img/challenger-og-2.jpg';
+import challengerog3 from './img/challenger-og-3.jpg';
+import challengerog4 from './img/challenger-og-4.jpg';
+import challengerog5 from './img/challenger-og-5.jpg';
+import cortez1 from './img/cortez-1.jpg';
+import cortez2 from './img/cortez-2.jpg';
+import cortez3 from './img/cortez-3.jpg';
+import cortez4 from './img/cortez-4.jpg';
+import cortez5 from './img/cortez-5.jpg';
+import dbreak1 from './img/dbreak-1.jpg';
+import dbreak2 from './img/dbreak-2.jpg';
+import dbreak3 from './img/dbreak-3.jpg';
+import dbreak4 from './img/dbreak-4.jpg';
+import dbreak5 from './img/dbreak-5.jpg';
+import freemetcon1 from './img/free-metcon-1.jpg';
+import freemetcon2 from './img/free-metcon-2.jpg';
+import freemetcon3 from './img/free-metcon-3.jpg';
+import freemetcon4 from './img/free-metcon-4.jpg';
+import freemetcon5 from './img/free-metcon-5.jpg';
+import kybrid1 from './img/kybrid-1.jpg';
+import kybrid2 from './img/kybrid-2.jpg';
+import kybrid3 from './img/kybrid-3.jpg';
+import kybrid4 from './img/kybrid-4.jpg';
+import kybrid5 from './img/kybrid-5.jpg';
+import metcon1 from './img/metcon-1.jpg';
+import metcon2 from './img/metcon-2.jpg';
+import metcon3 from './img/metcon-3.jpg';
+import metcon4 from './img/metcon-4.jpg';
+import metcon5 from './img/metcon-5.jpg';
+import metcontraining1 from './img/metcon-training-1.jpg';
+import metcontraining2 from './img/metcon-training-2.jpg';
+import metcontraining3 from './img/metcon-training-3.jpg';
+import metcontraining4 from './img/metcon-training-4.jpg';
+import metcontraining5 from './img/metcon-training-5.jpg';
+import reactinfinity1 from './img/react-infinity-1.jpg';
+import reactinfinity2 from './img/react-infinity-2.jpg';
+import reactinfinity3 from './img/react-infinity-3.jpg';
+import reactinfinity4 from './img/react-infinity-4.jpg';
+import sbzoomblazermid1 from './img/sb-zoom-blazer-mid-1.jpg';
+import sbzoomblazermid2 from './img/sb-zoom-blazer-mid-2.jpg';
+import sbzoomblazermid3 from './img/sb-zoom-blazer-mid-3.jpg';
+import sbzoomblazermid4 from './img/sb-zoom-blazer-mid-4.jpg';
+import sbzoomblazermid5 from './img/sb-zoom-blazer-mid-5.jpg';
+import sbzoomstefan1 from './img/sb-zoom-stefan-1.jpg';
+import sbzoomstefan2 from './img/sb-zoom-stefan-2.jpg';
+import sbzoomstefan3 from './img/sb-zoom-stefan-3.jpg';
+import sbzoomstefan4 from './img/sb-zoom-stefan-4.jpg';
+import sbzoomstefan5 from './img/sb-zoom-stefan-5.jpg';
+import spacehippie1 from './img/space-hippie-1.jpg';
+import spacehippie2 from './img/space-hippie-2.jpg';
+import spacehippie3 from './img/space-hippie-3.jpg';
+import spacehippie4 from './img/space-hippie-4.jpg';
+import spacehippie5 from './img/space-hippie-5.jpg';
+import superrep1 from './img/superrep-1.jpg';
+import superrep2 from './img/superrep-2.jpg';
+import superrep3 from './img/superrep-3.jpg';
+import superrep4 from './img/superrep-4.jpg';
+import superrep5 from './img/superrep-5.jpg';
+import zoomfreak1 from './img/zoom-freak-1.jpg';
+import zoomfreak2 from './img/zoom-freak-2.jpg';
+import zoomfreak3 from './img/zoom-freak-3.jpg';
+import zoomfreak4 from './img/zoom-freak-4.jpg';
+import zoomfreak5 from './img/zoom-freak-5.jpg';
+import zoomxvaporfly1 from './img/zoomx-vaporfly-1.jpg';
+import zoomxvaporfly2 from './img/zoomx-vaporfly-2.jpg';
+import zoomxvaporfly3 from './img/zoomx-vaporfly-3.jpg';
+import zoomxvaporfly4 from './img/zoomx-vaporfly-4.jpg';
+import zoomxvaporfly5 from './img/zoomx-vaporfly-5.jpg';
+
 export const productsData = [
   {
     id: 1,
     title: 'Air Force',
     img: [
-      'img/air-force-1.jpg',
-      'img/air-force-2.jpg',
-      'img/air-force-3.jpg',
-      'img/air-force-4.jpg',
-      'img/air-force-5.jpg',
+      `${airforce1}`,
+      `${airforce2}`,
+      `${airforce3}`,
+      `${airforce4}`,
+      `${airforce5}`,
     ],
     price: 100,
     brand: 'Nike',
@@ -21,11 +121,11 @@ export const productsData = [
     id: 2,
     title: 'Air Jordan Low',
     img: [
-      'img/air-jordan-low-1.jpg',
-      'img/air-jordan-low-2.jpg',
-      'img/air-jordan-low-3.jpg',
-      'img/air-jordan-low-4.jpg',
-      'img/air-jordan-low-5.jpg',
+      `${airjordanlow1}`,
+      `${airjordanlow2}`,
+      `${airjordanlow3}`,
+      `${airjordanlow4}`,
+      `${airjordanlow5}`,
     ],
     price: 200,
     brand: 'Nike',
@@ -39,11 +139,11 @@ export const productsData = [
     id: 3,
     title: 'Air Jordan Mid',
     img: [
-      'img/air-jordan-mid-1.jpg',
-      'img/air-jordan-mid-2.jpg',
-      'img/air-jordan-mid-3.jpg',
-      'img/air-jordan-mid-4.jpg',
-      'img/air-jordan-mid-5.jpg',
+      `${airjordanmid1}`,
+      `${airjordanmid2}`,
+      `${airjordanmid3}`,
+      `${airjordanmid4}`,
+      `${airjordanmid5}`,
     ],
     price: 100,
     brand: 'Nike',
@@ -57,11 +157,11 @@ export const productsData = [
     id: 4,
     title: 'Air Jordan XXXV',
     img: [
-      'img/air-jordan-xxxv-1.jpg',
-      'img/air-jordan-xxxv-2.jpg',
-      'img/air-jordan-xxxv-3.jpg',
-      'img/air-jordan-xxxv-4.jpg',
-      'img/air-jordan-xxxv-5.jpg',
+      `${airjordanxxxv1}`,
+      `${airjordanxxxv2}`,
+      `${airjordanxxxv3}`,
+      `${airjordanxxxv4}`,
+      `${airjordanxxxv5}`,
     ],
     price: 100,
     brand: 'Nike',
@@ -75,11 +175,11 @@ export const productsData = [
     id: 5,
     title: 'Air Max 90',
     img: [
-      'img/air-max-90-1.jpg',
-      'img/air-max-90-2.jpg',
-      'img/air-max-90-3.jpg',
-      'img/air-max-90-4.jpg',
-      'img/air-max-90-5.jpg',
+      `${airmax901}`,
+      `${airmax902}`,
+      `${airmax903}`,
+      `${airmax904}`,
+      `${airmax905}`,
     ],
     price: 100,
     brand: 'Nike',
@@ -93,11 +193,11 @@ export const productsData = [
     id: 6,
     title: 'Blazer Low',
     img: [
-      'img/blazer-low-1.jpg',
-      'img/blazer-low-2.jpg',
-      'img/blazer-low-3.jpg',
-      'img/blazer-low-4.jpg',
-      'img/blazer-low-5.jpg',
+      `${blazerlow1}`,
+      `${blazerlow2}`,
+      `${blazerlow3}`,
+      `${blazerlow4}`,
+      `${blazerlow5}`,
     ],
     price: 100,
     brand: 'Nike',
@@ -111,11 +211,11 @@ export const productsData = [
     id: 7,
     title: 'Challenger OG',
     img: [
-      'img/challenger-og-1.jpg',
-      'img/challenger-og-2.jpg',
-      'img/challenger-og-3.jpg',
-      'img/challenger-og-4.jpg',
-      'img/challenger-og-5.jpg',
+      `${challengerog1}`,
+      `${challengerog2}`,
+      `${challengerog3}`,
+      `${challengerog4}`,
+      `${challengerog5}`,
     ],
     price: 100,
     brand: 'Nike',
@@ -128,13 +228,7 @@ export const productsData = [
   {
     id: 8,
     title: 'Cortez',
-    img: [
-      'img/cortez-1.jpg',
-      'img/cortez-2.jpg',
-      'img/cortez-3.jpg',
-      'img/cortez-4.jpg',
-      'img/cortez-5.jpg',
-    ],
+    img: [`${cortez1}`, `${cortez2}`, `${cortez3}`, `${cortez4}`, `${cortez5}`],
     price: 100,
     brand: 'Nike',
     description:
@@ -146,13 +240,7 @@ export const productsData = [
   {
     id: 9,
     title: 'D-Break',
-    img: [
-      'img/dbreak-1.jpg',
-      'img/dbreak-2.jpg',
-      'img/dbreak-3.jpg',
-      'img/dbreak-4.jpg',
-      'img/dbreak-5.jpg',
-    ],
+    img: [`${dbreak1}`, `${dbreak2}`, `${dbreak3}`, `${dbreak4}`, `${dbreak5}`],
     price: 100,
     brand: 'Nike',
     description:
@@ -165,11 +253,11 @@ export const productsData = [
     id: 10,
     title: 'Free Metcon',
     img: [
-      'img/free-metcon-1.jpg',
-      'img/free-metcon-2.jpg',
-      'img/free-metcon-3.jpg',
-      'img/free-metcon-4.jpg',
-      'img/free-metcon-5.jpg',
+      `${freemetcon1}`,
+      `${freemetcon2}`,
+      `${freemetcon3}`,
+      `${freemetcon4}`,
+      `${freemetcon5}`,
     ],
     price: 100,
     brand: 'Nike',
@@ -182,13 +270,7 @@ export const productsData = [
   {
     id: 11,
     title: 'Kybrid',
-    img: [
-      'img/kybrid-1.jpg',
-      'img/kybrid-2.jpg',
-      'img/kybrid-3.jpg',
-      'img/kybrid-4.jpg',
-      'img/kybrid-5.jpg',
-    ],
+    img: [`${kybrid1}`, `${kybrid2}`, `${kybrid3}`, `${kybrid4}`, `${kybrid5}`],
     price: 100,
     brand: 'Nike',
     description:
@@ -200,13 +282,7 @@ export const productsData = [
   {
     id: 12,
     title: 'Metcon',
-    img: [
-      'img/metcon-1.jpg',
-      'img/metcon-2.jpg',
-      'img/metcon-3.jpg',
-      'img/metcon-4.jpg',
-      'img/metcon-5.jpg',
-    ],
+    img: [`${metcon1}`, `${metcon2}`, `${metcon3}`, `${metcon4}`, `${metcon5}`],
     price: 100,
     brand: 'Nike',
     description:
@@ -219,11 +295,11 @@ export const productsData = [
     id: 13,
     title: 'Metcon Training',
     img: [
-      'img/metcon-training-1.jpg',
-      'img/metcon-training-2.jpg',
-      'img/metcon-training-3.jpg',
-      'img/metcon-training-4.jpg',
-      'img/metcon-training-5.jpg',
+      `${metcontraining1}`,
+      `${metcontraining2}`,
+      `${metcontraining3}`,
+      `${metcontraining4}`,
+      `${metcontraining5}`,
     ],
     price: 100,
     brand: 'Nike',
@@ -237,10 +313,10 @@ export const productsData = [
     id: 14,
     title: 'React Infinity',
     img: [
-      'img/react-infinity-1.jpg',
-      'img/react-infinity-2.jpg',
-      'img/react-infinity-3.jpg',
-      'img/react-infinity-4.jpg',
+      `${reactinfinity1}`,
+      `${reactinfinity2}`,
+      `${reactinfinity3}`,
+      `${reactinfinity4}`,
     ],
     price: 100,
     brand: 'Nike',
@@ -254,11 +330,11 @@ export const productsData = [
     id: 15,
     title: 'SB Zoom Blazer Mid',
     img: [
-      'img/sb-zoom-blazer-mid-1.jpg',
-      'img/sb-zoom-blazer-mid-2.jpg',
-      'img/sb-zoom-blazer-mid-3.jpg',
-      'img/sb-zoom-blazer-mid-4.jpg',
-      'img/sb-zoom-blazer-mid-5.jpg',
+      `${sbzoomblazermid1}`,
+      `${sbzoomblazermid2}`,
+      `${sbzoomblazermid3}`,
+      `${sbzoomblazermid4}`,
+      `${sbzoomblazermid5}`,
     ],
     price: 100,
     brand: 'Nike',
@@ -272,11 +348,11 @@ export const productsData = [
     id: 16,
     title: 'SB Zoom Stefan',
     img: [
-      'img/sb-zoom-stefan-1.jpg',
-      'img/sb-zoom-stefan-2.jpg',
-      'img/sb-zoom-stefan-3.jpg',
-      'img/sb-zoom-stefan-4.jpg',
-      'img/sb-zoom-stefan-5.jpg',
+      `${sbzoomstefan1}`,
+      `${sbzoomstefan2}`,
+      `${sbzoomstefan3}`,
+      `${sbzoomstefan4}`,
+      `${sbzoomstefan5}`,
     ],
     price: 100,
     brand: 'Nike',
@@ -290,11 +366,11 @@ export const productsData = [
     id: 17,
     title: 'Space Hippie',
     img: [
-      'img/space-hippie-1.jpg',
-      'img/space-hippie-2.jpg',
-      'img/space-hippie-3.jpg',
-      'img/space-hippie-4.jpg',
-      'img/space-hippie-5.jpg',
+      `${spacehippie1}`,
+      `${spacehippie2}`,
+      `${spacehippie3}`,
+      `${spacehippie4}`,
+      `${spacehippie5}`,
     ],
     price: 100,
     brand: 'Nike',
@@ -308,11 +384,11 @@ export const productsData = [
     id: 18,
     title: 'Super REP',
     img: [
-      'img/superrep-1.jpg',
-      'img/superrep-2.jpg',
-      'img/superrep-3.jpg',
-      'img/superrep-4.jpg',
-      'img/superrep-5.jpg',
+      `${superrep1}`,
+      `${superrep2}`,
+      `${superrep3}`,
+      `${superrep4}`,
+      `${superrep5}`,
     ],
     price: 100,
     brand: 'Nike',
@@ -326,11 +402,11 @@ export const productsData = [
     id: 19,
     title: 'Zoom Freak',
     img: [
-      'img/zoom-freak-1.jpg',
-      'img/zoom-freak-2.jpg',
-      'img/zoom-freak-3.jpg',
-      'img/zoom-freak-4.jpg',
-      'img/zoom-freak-5.jpg',
+      `${zoomfreak1}`,
+      `${zoomfreak2}`,
+      `${zoomfreak3}`,
+      `${zoomfreak4}`,
+      `${zoomfreak5}`,
     ],
     price: 100,
     brand: 'Nike',
@@ -344,11 +420,11 @@ export const productsData = [
     id: 20,
     title: 'Zoom-X Vaporfly',
     img: [
-      'img/zoomx-vaporfly-1.jpg',
-      'img/zoomx-vaporfly-2.jpg',
-      'img/zoomx-vaporfly-3.jpg',
-      'img/zoomx-vaporfly-4.jpg',
-      'img/zoomx-vaporfly-5.jpg',
+      `${zoomxvaporfly1}`,
+      `${zoomxvaporfly2}`,
+      `${zoomxvaporfly3}`,
+      `${zoomxvaporfly4}`,
+      `${zoomxvaporfly5}`,
     ],
     price: 100,
     brand: 'Nike',
