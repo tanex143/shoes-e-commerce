@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { ProductsContext } from '../contextProvider';
 import { Link } from 'react-router-dom';
+import { Modal } from 'antd';
 
 const ProductDetails = () => {
   const {
@@ -8,6 +9,8 @@ const ProductDetails = () => {
     thousands_separators,
     myCart,
     addToCart,
+    isModalVisible,
+    handleCancel,
   } = useContext(ProductsContext);
 
   return (
@@ -72,6 +75,44 @@ const ProductDetails = () => {
       </div>
       {console.log(productDetailsDisplay)}
       {console.log(myCart)}
+
+      <Modal
+        closable={false}
+        visible={isModalVisible}
+        onCancel={handleCancel}
+        footer={null}
+      >
+        <p className='py-1 px-3 bg-lime-200 rounded text-center uppercase text-lg'>
+          item added to cart
+        </p>
+        <div className='w-full py-2'>
+          <img src={productDetailsDisplay.img[0]} alt='img' />
+        </div>
+        <div className='flex justify-between gap-5 py-5'>
+          <h1 className='text-2xl font-semibold'>
+            {productDetailsDisplay.name}
+          </h1>
+          <h1 className='text-xl font-semibold text-gray-400'>
+            Php {thousands_separators(productDetailsDisplay.price)}
+          </h1>
+        </div>
+        <div className='flex justify-center gap-5'>
+          <Link
+            to='/'
+            onClick={handleCancel}
+            className='py-1 px-3 rounded uppercase border border-lightblue-400 hover:bg-lightblue-400 hover:text-black transition-all duration-500 ease-in-out'
+          >
+            Continue Shopping
+          </Link>
+          <Link
+            to='/mycart'
+            onClick={handleCancel}
+            className='py-1 px-3 rounded uppercase border border-bluegray-500 hover:bg-bluegray-500 hover:text-white transition-all duration-500 ease-in-out'
+          >
+            My Cart
+          </Link>
+        </div>
+      </Modal>
     </>
   );
 };

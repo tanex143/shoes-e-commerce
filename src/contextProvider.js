@@ -7,6 +7,7 @@ export const ContextProvider = ({ children }) => {
   const [allProductsData, setAllProductsData] = useState(productsData);
   const [productDetailsDisplay, setProductDetailsDisplay] = useState([]);
   const [myCart, setMyCart] = useState([]);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const thousands_separators = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -22,6 +23,11 @@ export const ContextProvider = ({ children }) => {
     product.total = price;
     setAllProductsData(tempProducts);
     setMyCart([...myCart, product]);
+    setIsModalVisible(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
   };
 
   return (
@@ -35,6 +41,8 @@ export const ContextProvider = ({ children }) => {
         myCart,
         setMyCart,
         addToCart,
+        isModalVisible,
+        handleCancel,
       }}
     >
       {children}
