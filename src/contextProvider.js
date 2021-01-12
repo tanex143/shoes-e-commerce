@@ -8,6 +8,7 @@ export const ContextProvider = ({ children }) => {
   const [productDetailsDisplay, setProductDetailsDisplay] = useState([]);
   const [myCart, setMyCart] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [allTotalPrice, setAllTotalPrice] = useState(0);
 
   const thousandsSeparatorsHandler = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -27,24 +28,18 @@ export const ContextProvider = ({ children }) => {
     setIsModalVisible(true);
   };
 
-  const incrementQuantityHandler = (id) => {
+  const quantityHandler = (id, quantity) => {
     let tempCart = [...myCart];
     let index = tempCart.findIndex((f) => f.id === id);
-
     let product = tempCart[index];
-    product.count += 1;
+
+    if (quantity) {
+      product.count += 1;
+    } else {
+      product.count -= 1;
+    }
+
     product.total = product.price * product.count;
-
-    setMyCart(tempCart);
-  };
-  const decrementQuantityHandler = (id) => {
-    let tempCart = [...myCart];
-    let index = tempCart.findIndex((f) => f.id === id);
-
-    let product = tempCart[index];
-    product.count -= 1;
-    product.total = product.price * product.count;
-
     setMyCart(tempCart);
   };
 
@@ -67,6 +62,25 @@ export const ContextProvider = ({ children }) => {
     setIsModalVisible(false);
   };
 
+  const clearCartHandler = () => {
+    let tempCart = [...myCart];
+
+    tempCart.map((item) => {
+      item.inCart = false;
+      item.count = 0;
+      item.total = 0;
+
+      return setMyCart([]);
+    });
+  };
+
+  const calculateOverAllTotal = () => {
+    let subtotal = 0;
+    myCart.map((item) => (subtotal += item.total));
+
+    setAllTotalPrice(subtotal);
+  };
+
   return (
     <ProductsContext.Provider
       value={{
@@ -80,9 +94,12 @@ export const ContextProvider = ({ children }) => {
         addToCartHandler,
         isModalVisible,
         modalCancelHandler,
-        incrementQuantityHandler,
-        decrementQuantityHandler,
+        quantityHandler,
         removeItemHandler,
+        clearCartHandler,
+        allTotalPrice,
+        setAllTotalPrice,
+        calculateOverAllTotal,
       }}
     >
       {children}

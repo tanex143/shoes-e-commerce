@@ -9,9 +9,10 @@ const MyCartDetails = () => {
   const {
     myCart,
     thousandsSeparatorsHandler,
-    incrementQuantityHandler,
-    decrementQuantityHandler,
+    quantityHandler,
     removeItemHandler,
+    clearCartHandler,
+    allTotalPrice,
   } = useContext(ProductsContext);
   return (
     <>
@@ -70,7 +71,7 @@ const MyCartDetails = () => {
                       ''
                     ) : (
                       <div
-                        onClick={() => decrementQuantityHandler(item.id)}
+                        onClick={() => quantityHandler(item.id, 0)}
                         className='py-1 px-2 border hover:bg-bluegray-200 rounded cursor-pointer'
                       >
                         <FontAwesomeIcon icon={faMinus} className='' />
@@ -78,7 +79,7 @@ const MyCartDetails = () => {
                     )}
                     <h1 className='text-2xl'>{item.count}</h1>
                     <div
-                      onClick={() => incrementQuantityHandler(item.id)}
+                      onClick={() => quantityHandler(item.id, 1)}
                       className='py-1 px-2 border hover:bg-bluegray-200 rounded cursor-pointer'
                     >
                       <FontAwesomeIcon icon={faPlus} className='' />
@@ -99,10 +100,23 @@ const MyCartDetails = () => {
                 </div>
               ))}
             </div>
+            <div className='flex justify-center'>
+              <button
+                onClick={clearCartHandler}
+                className='uppercase tracking-wide py-2 px-5 bg-red-500 text-white hover:bg-red-600 rounded right-0'
+              >
+                clear cart
+              </button>
+            </div>
+            <div className='flex justify-end gap-5 my-5'>
+              <h1 className='text-xl font-semibold'>Total:</h1>
+              <p className='text-xl font-semibold'>
+                {thousandsSeparatorsHandler(allTotalPrice)}
+              </p>
+            </div>
           </div>
         )}
       </div>
-      {myCart.map((data) => console.log(data))}
     </>
   );
 };

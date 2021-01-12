@@ -72,8 +72,8 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-      {console.log(productDetailsDisplay)}
-      {console.log(myCart)}
+      {console.log('product selected', productDetailsDisplay)}
+      {console.log('inCart', myCart)}
 
       <Modal
         closable={false}
@@ -81,7 +81,7 @@ const ProductDetails = () => {
         onCancel={modalCancelHandler}
         footer={null}
       >
-        <p className='py-1 px-3 bg-lime-200 rounded text-center uppercase text-lg font-semibold'>
+        <p className='py-1 px-3 bg-lime-300 rounded text-center uppercase text-lg font-semibold'>
           item added to cart
         </p>
         <div className='w-full py-2'>
