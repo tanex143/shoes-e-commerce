@@ -9,11 +9,11 @@ export const ContextProvider = ({ children }) => {
   const [myCart, setMyCart] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
-  const thousands_separators = (num) => {
+  const thousandsSeparatorsHandler = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
 
-  const addToCart = (id) => {
+  const addToCartHandler = (id) => {
     let tempProducts = [...allProductsData];
     let index = tempProducts.findIndex((f) => f.id === id);
     let product = tempProducts[index];
@@ -21,12 +21,49 @@ export const ContextProvider = ({ children }) => {
     product.count = 1;
     const price = product.price;
     product.total = price;
+
     setAllProductsData(tempProducts);
     setMyCart([...myCart, product]);
     setIsModalVisible(true);
   };
 
-  const handleCancel = () => {
+  const incrementQuantityHandler = (id) => {
+    let tempCart = [...myCart];
+    let index = tempCart.findIndex((f) => f.id === id);
+
+    let product = tempCart[index];
+    product.count += 1;
+    product.total = product.price * product.count;
+
+    setMyCart(tempCart);
+  };
+  const decrementQuantityHandler = (id) => {
+    let tempCart = [...myCart];
+    let index = tempCart.findIndex((f) => f.id === id);
+
+    let product = tempCart[index];
+    product.count -= 1;
+    product.total = product.price * product.count;
+
+    setMyCart(tempCart);
+  };
+
+  const removeItemHandler = (id) => {
+    let tempProducts = [...allProductsData];
+    let tempCart = [...myCart];
+    const filtered = tempCart.filter((f) => f.id !== id);
+
+    let index = tempProducts.findIndex((f) => f.id === id);
+    let product = tempProducts[index];
+    product.inCart = false;
+    product.count = 0;
+    product.total = 0;
+
+    setMyCart(filtered);
+    setAllProductsData(tempProducts);
+  };
+
+  const modalCancelHandler = () => {
     setIsModalVisible(false);
   };
 
@@ -37,12 +74,15 @@ export const ContextProvider = ({ children }) => {
         setAllProductsData,
         setProductDetailsDisplay,
         productDetailsDisplay,
-        thousands_separators,
+        thousandsSeparatorsHandler,
         myCart,
         setMyCart,
-        addToCart,
+        addToCartHandler,
         isModalVisible,
-        handleCancel,
+        modalCancelHandler,
+        incrementQuantityHandler,
+        decrementQuantityHandler,
+        removeItemHandler,
       }}
     >
       {children}

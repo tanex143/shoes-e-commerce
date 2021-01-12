@@ -12,6 +12,7 @@ const App = () => {
       <Switch>
         <Route path='/' exact>
           <ProductsList />
+          <Footer />
         </Route>
         <Route path='/mycart' exact>
           <MyCartDetails />
@@ -20,7 +21,6 @@ const App = () => {
           <ProductDetails />
         </Route>
       </Switch>
-      <Footer />
     </>
   );
 };

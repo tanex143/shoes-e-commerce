@@ -7,7 +7,7 @@ const ProductsList = () => {
   const {
     allProductsData,
     setProductDetailsDisplay,
-    thousands_separators,
+    thousandsSeparatorsHandler,
   } = useContext(ProductsContext);
   return (
     <>
@@ -24,7 +24,10 @@ const ProductsList = () => {
               onClick={() => setProductDetailsDisplay(data)}
               className='hover:text-black'
             >
-              <Card data={data} thousands_separators={thousands_separators} />
+              <Card
+                data={data}
+                thousandsSeparatorsHandler={thousandsSeparatorsHandler}
+              />
             </Link>
           ))}
         </div>

@@ -6,11 +6,11 @@ import { Modal, Carousel } from 'antd';
 const ProductDetails = () => {
   const {
     productDetailsDisplay,
-    thousands_separators,
+    thousandsSeparatorsHandler,
     myCart,
-    addToCart,
+    addToCartHandler,
     isModalVisible,
-    handleCancel,
+    modalCancelHandler,
   } = useContext(ProductsContext);
 
   return (
@@ -47,7 +47,7 @@ const ProductDetails = () => {
               ))}
             </div>
             <p className='text-3xl font-semibold text-gray-700'>
-              Php {thousands_separators(productDetailsDisplay.price)}
+              Php {thousandsSeparatorsHandler(productDetailsDisplay.price)}
             </p>
             <div className='py-10 flex gap-6'>
               {productDetailsDisplay.inCart === true ? (
@@ -56,7 +56,7 @@ const ProductDetails = () => {
                 </p>
               ) : (
                 <button
-                  onClick={() => addToCart(productDetailsDisplay.id)}
+                  onClick={() => addToCartHandler(productDetailsDisplay.id)}
                   className='py-2 px-4 bg-bluegray-500 text-white hover:bg-bluegray-600 rounded uppercase text-xl'
                 >
                   add to cart
@@ -78,7 +78,7 @@ const ProductDetails = () => {
       <Modal
         closable={false}
         visible={isModalVisible}
-        onCancel={handleCancel}
+        onCancel={modalCancelHandler}
         footer={null}
       >
         <p className='py-1 px-3 bg-lime-200 rounded text-center uppercase text-lg font-semibold'>
@@ -92,20 +92,20 @@ const ProductDetails = () => {
             {productDetailsDisplay.name}
           </h1>
           <h1 className='text-xl font-semibold text-gray-400'>
-            Php {thousands_separators(productDetailsDisplay.price)}
+            Php {thousandsSeparatorsHandler(productDetailsDisplay.price)}
           </h1>
         </div>
         <div className='flex justify-center gap-5'>
           <Link
             to='/'
-            onClick={handleCancel}
+            onClick={modalCancelHandler}
             className='py-1 px-3 rounded uppercase border border-lightblue-400 hover:bg-lightblue-400 hover:text-black transition-all duration-500 ease-in-out'
           >
             Continue Shopping
           </Link>
           <Link
             to='/mycart'
-            onClick={handleCancel}
+            onClick={modalCancelHandler}
             className='py-1 px-3 rounded uppercase border border-bluegray-500 hover:bg-bluegray-500 hover:text-white transition-all duration-500 ease-in-out'
           >
             My Cart
