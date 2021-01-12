@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { ProductsContext } from '../contextProvider';
 import { Link } from 'react-router-dom';
-import { Modal } from 'antd';
+import { Modal, Carousel } from 'antd';
 
 const ProductDetails = () => {
   const {
@@ -19,15 +19,14 @@ const ProductDetails = () => {
         <h1 className='text-center text-3xl font-semibold py-8'>
           Product Details
         </h1>
-        <div className='grid grid-cols-2 gap-5'>
-          <div className='grid grid-cols-2 gap-2'>
+        <div className='grid grid-cols-2 gap-5 pb-32'>
+          <Carousel autoplay dotPosition='bottom'>
             {productDetailsDisplay.img.map((i, index) => (
               <div key={index}>
-                <img src={`${i}`} alt='img' className='w-full' />
-                {console.log(i)}
+                <img src={`${i}`} alt='img' className='w-4/6 mx-auto rounded' />
               </div>
             ))}
-          </div>
+          </Carousel>
           <div className='pt-16'>
             <p className='text-xl tracking-wider uppercase text-gray-400'>
               {productDetailsDisplay.type}
@@ -37,11 +36,11 @@ const ProductDetails = () => {
             </h1>
             <p className='text-xl pb-2'>{productDetailsDisplay.brand}</p>
             <p>{productDetailsDisplay.description}</p>
-            <div className='py-10'>
+            <div className='py-10 flex gap-5'>
               {productDetailsDisplay.sizes.map((size, index) => (
                 <button
                   key={index}
-                  className='py-1 px-3 outline-none rounded border border-gray-500 mx-3 uppercase text-sm hover:bg-bluegray-500 hover:text-white transition-all duration-500 ease-in-out focus:bg-bluegray-500 focus:outline-none focus:text-white'
+                  className='py-1 px-3 outline-none rounded border border-gray-500 uppercase text-sm hover:bg-bluegray-500 hover:text-white transition-all duration-500 ease-in-out focus:bg-bluegray-500 focus:outline-none focus:text-white'
                 >
                   {size}
                 </button>
@@ -82,7 +81,7 @@ const ProductDetails = () => {
         onCancel={handleCancel}
         footer={null}
       >
-        <p className='py-1 px-3 bg-lime-200 rounded text-center uppercase text-lg'>
+        <p className='py-1 px-3 bg-lime-200 rounded text-center uppercase text-lg font-semibold'>
           item added to cart
         </p>
         <div className='w-full py-2'>
