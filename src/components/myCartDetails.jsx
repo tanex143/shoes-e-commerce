@@ -12,7 +12,6 @@ const MyCartDetails = () => {
     quantityHandler,
     removeItemHandler,
     clearCartHandler,
-    allTotalPrice,
   } = useContext(ProductsContext);
   return (
     <>
@@ -41,7 +40,7 @@ const MyCartDetails = () => {
               <h1 className='pb-4'>Price</h1>
               <h1 className='pb-4'>Quantity</h1>
               <h1 className='pb-4'>Remove</h1>
-              <h1 className='pb-4'>Total</h1>
+              <h1 className='pb-4'>Sub-Total</h1>
             </div>
             <div>
               {myCart.map((item) => (
@@ -111,7 +110,13 @@ const MyCartDetails = () => {
             <div className='flex justify-end gap-5 my-5'>
               <h1 className='text-xl font-semibold'>Total:</h1>
               <p className='text-xl font-semibold'>
-                {thousandsSeparatorsHandler(allTotalPrice)}
+                ₱
+                {thousandsSeparatorsHandler(
+                  myCart.reduce(
+                    (variable, currentValue) => variable + currentValue.total,
+                    0
+                  )
+                )}
               </p>
             </div>
           </div>

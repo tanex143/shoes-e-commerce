@@ -99,7 +99,7 @@ const ProductDetails = () => {
           <Link
             to='/'
             onClick={modalCancelHandler}
-            className='py-1 px-3 rounded uppercase border border-lightblue-400 hover:bg-lightblue-400 hover:text-black transition-all duration-500 ease-in-out'
+            className='py-1 px-3 rounded uppercase border border-lightblue-400 hover:bg-lightblue-400 hover:text-white transition-all duration-500 ease-in-out'
           >
             Continue Shopping
           </Link>

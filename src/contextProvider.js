@@ -8,7 +8,6 @@ export const ContextProvider = ({ children }) => {
   const [productDetailsDisplay, setProductDetailsDisplay] = useState([]);
   const [myCart, setMyCart] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [allTotalPrice, setAllTotalPrice] = useState(0);
 
   const thousandsSeparatorsHandler = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -74,13 +73,6 @@ export const ContextProvider = ({ children }) => {
     });
   };
 
-  const calculateOverAllTotal = () => {
-    let subtotal = 0;
-    myCart.map((item) => (subtotal += item.total));
-
-    setAllTotalPrice(subtotal);
-  };
-
   return (
     <ProductsContext.Provider
       value={{
@@ -97,9 +89,6 @@ export const ContextProvider = ({ children }) => {
         quantityHandler,
         removeItemHandler,
         clearCartHandler,
-        allTotalPrice,
-        setAllTotalPrice,
-        calculateOverAllTotal,
       }}
     >
       {children}
