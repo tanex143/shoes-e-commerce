@@ -12,6 +12,15 @@ export const ContextProvider = ({ children }) => {
   const [loginView, setLoginView] = useState(true);
   const [signupView, setSignupView] = useState(false);
 
+  const [signupInput, setSignupInput] = useState('');
+  const [signupPassword, setSignupPassword] = useState('');
+  const [signupCPassword, setSignupCPassword] = useState('');
+
+  const [loginInput, setLoginInput] = useState('');
+  const [loginPassword, setLoginPassword] = '';
+
+  const [users, setUsers] = useState([]);
+
   const thousandsSeparatorsHandler = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
@@ -115,6 +124,21 @@ export const ContextProvider = ({ children }) => {
     }
   };
 
+  const signupHandler = (e) => {
+    e.preventDefault();
+
+    if (signupPassword !== signupCPassword) {
+      return null;
+    } else {
+      setUsers([
+        ...users,
+        { username: signupInput, password: signupCPassword },
+      ]);
+    }
+
+    console.log(users);
+  };
+
   return (
     <ProductsContext.Provider
       value={{
@@ -135,10 +159,15 @@ export const ContextProvider = ({ children }) => {
         sizeSelection,
         setSizeSelecttion,
         loginView,
-        setLoginView,
         signupView,
-        setSignupView,
         loginViewHandler,
+        signupInput,
+        setSignupInput,
+        signupPassword,
+        setSignupPassword,
+        signupCPassword,
+        setSignupCPassword,
+        signupHandler,
       }}
     >
       {children}
