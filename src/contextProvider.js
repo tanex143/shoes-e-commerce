@@ -9,6 +9,8 @@ export const ContextProvider = ({ children }) => {
   const [myCart, setMyCart] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [sizeSelection, setSizeSelecttion] = useState(false);
+  const [loginView, setLoginView] = useState(true);
+  const [signupView, setSignupView] = useState(false);
 
   const thousandsSeparatorsHandler = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -102,6 +104,17 @@ export const ContextProvider = ({ children }) => {
     setSizeSelecttion(true);
   };
 
+  const loginViewHandler = (choices) => {
+    if (choices === 'login') {
+      setLoginView(true);
+      setSignupView(false);
+    }
+    if (choices === 'signup') {
+      setLoginView(false);
+      setSignupView(true);
+    }
+  };
+
   return (
     <ProductsContext.Provider
       value={{
@@ -121,6 +134,11 @@ export const ContextProvider = ({ children }) => {
         sizeChoiceHandler,
         sizeSelection,
         setSizeSelecttion,
+        loginView,
+        setLoginView,
+        signupView,
+        setSignupView,
+        loginViewHandler,
       }}
     >
       {children}
