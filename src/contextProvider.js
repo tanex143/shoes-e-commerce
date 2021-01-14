@@ -92,10 +92,11 @@ export const ContextProvider = ({ children }) => {
 
   const sizeChoiceHandler = (product, id) => {
     let index = product.sizes.findIndex((f) => f.id === id);
-
     let size = product.sizes[index];
 
     size.choice = true;
+
+    product.sizes = [size];
 
     setProductDetailsDisplay(product);
     setSizeSelecttion(true);
