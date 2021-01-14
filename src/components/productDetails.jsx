@@ -11,6 +11,9 @@ const ProductDetails = () => {
     addToCartHandler,
     isModalVisible,
     modalCancelHandler,
+    sizeChoiceHandler,
+    sizeSelection,
+    setSizeSelecttion,
   } = useContext(ProductsContext);
 
   return (
@@ -37,12 +40,15 @@ const ProductDetails = () => {
             <p className='text-xl pb-2'>{productDetailsDisplay.brand}</p>
             <p>{productDetailsDisplay.description}</p>
             <div className='py-10 flex gap-5'>
-              {productDetailsDisplay.sizes.map((size, index) => (
+              {productDetailsDisplay.sizes.map((size) => (
                 <button
-                  key={index}
+                  key={size.id}
+                  onClick={() =>
+                    sizeChoiceHandler(productDetailsDisplay, size.id)
+                  }
                   className='py-1 px-3 outline-none rounded border border-gray-500 uppercase text-sm hover:bg-bluegray-500 hover:text-white transition-all duration-500 ease-in-out focus:bg-bluegray-500 focus:outline-none focus:text-white'
                 >
-                  {size}
+                  {size.size}
                 </button>
               ))}
             </div>
@@ -56,14 +62,23 @@ const ProductDetails = () => {
                 </p>
               ) : (
                 <button
-                  onClick={() => addToCartHandler(productDetailsDisplay.id)}
-                  className='py-2 px-4 bg-bluegray-500 text-white hover:bg-bluegray-600 rounded uppercase text-xl'
+                  onClick={
+                    sizeSelection
+                      ? () => addToCartHandler(productDetailsDisplay.id)
+                      : null
+                  }
+                  className={`py-2 px-4 ${
+                    sizeSelection
+                      ? 'bg-bluegray-500 hover:bg-bluegray-600'
+                      : 'bg-red-500 hover:bg-red-600'
+                  }  text-white  rounded uppercase text-xl`}
                 >
-                  add to cart
+                  {sizeSelection ? 'add to cart' : 'please select your size'}
                 </button>
               )}
               <Link
                 to='/'
+                onClick={() => setSizeSelecttion(false)}
                 className='py-2 px-4 border border-bluegray-500 hover:bg-bluegray-400 hover:text-white rounded uppercase text-xl'
               >
                 choose another

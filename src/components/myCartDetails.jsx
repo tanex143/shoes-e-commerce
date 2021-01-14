@@ -34,9 +34,10 @@ const MyCartDetails = () => {
           </div>
         ) : (
           <div>
-            <div className='grid grid-cols-6 text-center text-2xl font-semibold border-b-2'>
+            <div className='grid grid-cols-7 text-center text-2xl font-semibold border-b-2'>
               <h1 className='pb-4'>Products</h1>
-              <h1 className='pb-4'>Name of Products</h1>
+              <h1 className='pb-4'>Name</h1>
+              <h1 className='pb-4'>Size</h1>
               <h1 className='pb-4'>Price</h1>
               <h1 className='pb-4'>Quantity</h1>
               <h1 className='pb-4'>Remove</h1>
@@ -46,7 +47,7 @@ const MyCartDetails = () => {
               {myCart.map((item) => (
                 <div
                   key={item.id}
-                  className='grid grid-cols-6 gap-5 text-center my-5 rounded bg-truegray-100'
+                  className='grid grid-cols-7 gap-5 text-center my-5 rounded bg-truegray-100'
                 >
                   <div>
                     <div>
@@ -59,6 +60,9 @@ const MyCartDetails = () => {
                   </div>
                   <div className='flex justify-center items-center'>
                     <h1 className='text-2xl'>{item.name}</h1>
+                  </div>
+                  <div className='flex justify-center items-center uppercase'>
+                    <h1 className='text-2xl'>{item.sizes[0].size}</h1>
                   </div>
                   <div className='flex justify-center items-center'>
                     <h1 className='text-2xl'>
@@ -87,7 +91,7 @@ const MyCartDetails = () => {
                   <div className='flex justify-center items-center'>
                     <FontAwesomeIcon
                       icon={faTrashAlt}
-                      className='text-2xl cursor-pointer text-red-500'
+                      className='text-2xl cursor-pointer text-red-400 hover:text-red-600'
                       onClick={() => removeItemHandler(item.id)}
                     />
                   </div>
@@ -99,7 +103,13 @@ const MyCartDetails = () => {
                 </div>
               ))}
             </div>
-            <div className='flex justify-center'>
+            <div className='flex justify-center gap-5'>
+              <Link
+                to='/'
+                className='uppercase tracking-wide py-2 px-5 bg-lightblue-400 text-white hover:bg-lightblue-500 hover:text-white rounded right-0'
+              >
+                shop again
+              </Link>
               <button
                 onClick={clearCartHandler}
                 className='uppercase tracking-wide py-2 px-5 bg-red-500 text-white hover:bg-red-600 rounded right-0'

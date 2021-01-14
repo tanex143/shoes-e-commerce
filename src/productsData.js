@@ -112,7 +112,11 @@ export const productsData = [
     price: 10195,
     brand: 'Nike',
     type: 'Shopping Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -132,7 +136,11 @@ export const productsData = [
     price: 8095,
     brand: 'Nike',
     type: 'Basketball Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -152,7 +160,11 @@ export const productsData = [
     price: 10095,
     brand: 'Nike',
     type: 'Basketball Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -172,7 +184,11 @@ export const productsData = [
     price: 12195,
     brand: 'Nike',
     type: 'Basketball Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -192,7 +208,11 @@ export const productsData = [
     price: 11855,
     brand: 'Nike',
     type: 'Running Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -212,7 +232,11 @@ export const productsData = [
     price: 12955,
     brand: 'Nike',
     type: 'Running Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -232,7 +256,11 @@ export const productsData = [
     price: 13195,
     brand: 'Nike',
     type: 'Running Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -246,7 +274,11 @@ export const productsData = [
     price: 7995,
     brand: 'Nike',
     type: 'Shopping Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -260,7 +292,11 @@ export const productsData = [
     price: 10999,
     brand: 'Nike',
     type: 'Running Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -280,7 +316,11 @@ export const productsData = [
     price: 10995,
     brand: 'Nike',
     type: 'Running Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -294,7 +334,11 @@ export const productsData = [
     price: 10099,
     brand: 'Nike',
     type: 'Basketball Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -308,7 +352,11 @@ export const productsData = [
     price: 12995,
     brand: 'Nike',
     type: 'Running Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -328,7 +376,11 @@ export const productsData = [
     price: 13195,
     brand: 'Nike',
     type: 'Training Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -347,7 +399,11 @@ export const productsData = [
     price: 11955,
     brand: 'Nike',
     type: 'Running Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -367,7 +423,11 @@ export const productsData = [
     price: 11999,
     brand: 'Nike',
     type: 'Basketball Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -387,7 +447,11 @@ export const productsData = [
     price: 12999,
     brand: 'Nike',
     type: 'Basketball Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -407,7 +471,11 @@ export const productsData = [
     price: 10199,
     brand: 'Nike',
     type: 'Running Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -427,7 +495,11 @@ export const productsData = [
     price: 15199,
     brand: 'Nike',
     type: 'Running Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -447,7 +519,11 @@ export const productsData = [
     price: 14955,
     brand: 'Nike',
     type: 'Running Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
@@ -467,7 +543,11 @@ export const productsData = [
     price: 19995,
     brand: 'Nike',
     type: 'Running Shoe',
-    sizes: ['large', 'extra large', '2x extra large'],
+    sizes: [
+      { id: 101, size: 'large', choice: false },
+      { id: 102, size: 'extra large', choice: false },
+      { id: 103, size: '2x extra large', choice: false },
+    ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aspernatur sint exercitationem, explicabo deserunt autem quisquam nisi, aperiam quaerat nobis, ipsam iusto qui dignissimos fugit. Deleniti aut voluptate sit. Explicabo.',
     inCart: false,
