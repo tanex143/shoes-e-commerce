@@ -16,17 +16,21 @@ const App = () => {
           <ProductsList />
           <Footer />
         </Route>
+
         <Route path='/login' exact>
           <Login />
         </Route>
-        <Navbar />
+
         <Route path='/mycart' exact>
+          <Navbar />
           <MyCartDetails />
         </Route>
+
         <Route path='/productdetails/:title'>
           <Navbar />
           <ProductDetails />
         </Route>
+
         <Route component={PageNotFound} />
       </Switch>
     </>

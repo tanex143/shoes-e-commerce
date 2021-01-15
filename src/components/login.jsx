@@ -17,7 +17,12 @@ const Login = () => {
     setSignupPassword,
     signupCPassword,
     setSignupCPassword,
+    loginInput,
+    setLoginInput,
+    loginPassword,
+    setLoginPassword,
     signupHandler,
+    loginHandler,
   } = useContext(ProductsContext);
   return (
     <div className='bg-bluegray-200 h-100vh'>
@@ -48,11 +53,14 @@ const Login = () => {
           </div>
           <div className='mx-8 py-5'>
             {loginView ? (
-              <form onSubmit={(e) => e.preventDefault()}>
+              <form onSubmit={loginHandler}>
                 <Input
                   className='mb-5'
                   size='large'
                   placeholder='Username'
+                  value={loginInput}
+                  onChange={(e) => setLoginInput(e.target.value)}
+                  autoFocus
                   prefix={
                     <FontAwesomeIcon
                       icon={faUserAlt}
@@ -64,6 +72,8 @@ const Login = () => {
                   className='mb-5'
                   size='large'
                   placeholder='Password'
+                  value={loginPassword}
+                  onChange={(e) => setLoginPassword(e.target.value)}
                   prefix={
                     <FontAwesomeIcon
                       icon={faLock}
@@ -97,6 +107,7 @@ const Login = () => {
                   value={signupInput}
                   onChange={(e) => setSignupInput(e.target.value)}
                   required
+                  autoFocus
                   prefix={
                     <FontAwesomeIcon
                       icon={faUserAlt}
@@ -145,11 +156,15 @@ const Login = () => {
                   type='submit'
                   onSubmit={() => message.success('Account has been created.')}
                   className={`uppercase py-2 px-5 text-white ${
-                    signupPassword !== signupCPassword
+                    signupInput === '' || signupPassword !== signupCPassword
                       ? 'cursor-not-allowed bg-lightblue-200'
                       : 'bg-lightblue-400 hover:bg-lightblue-500 cursor-pointer'
                   }  rounded w-full focus:outline-none`}
-                  disabled={signupPassword !== signupCPassword ? true : false}
+                  disabled={
+                    signupInput === '' || signupPassword !== signupCPassword
+                      ? true
+                      : false
+                  }
                 >
                   signup
                 </button>

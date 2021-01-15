@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { productsData } from './productsData';
 
 export const ProductsContext = createContext();
@@ -17,9 +18,17 @@ export const ContextProvider = ({ children }) => {
   const [signupCPassword, setSignupCPassword] = useState('');
 
   const [loginInput, setLoginInput] = useState('');
-  const [loginPassword, setLoginPassword] = '';
+  const [loginPassword, setLoginPassword] = useState('');
 
-  const [users, setUsers] = useState([]);
+  const [currentUser, setCurrentUser] = useState([
+    { username: '', password: '' },
+  ]);
+
+  const history = useHistory();
+
+  const [users, setUsers] = useState([
+    { username: 'tanex@yahoo.com', password: '123' },
+  ]);
 
   const thousandsSeparatorsHandler = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -139,6 +148,22 @@ export const ContextProvider = ({ children }) => {
     console.log(users);
   };
 
+  const loginHandler = (e) => {
+    e.preventDefault();
+
+    if (
+      users.filter((u) => u.username.includes(loginInput)) &&
+      users.filter((p) => p.password.includes(loginPassword))
+    ) {
+      setCurrentUser([{ username: loginInput, password: loginPassword }]);
+      console.log('login');
+      history.push('/');
+    } else {
+      console.log('error login');
+      return history.push('/login');
+    }
+  };
+
   return (
     <ProductsContext.Provider
       value={{
@@ -167,7 +192,13 @@ export const ContextProvider = ({ children }) => {
         setSignupPassword,
         signupCPassword,
         setSignupCPassword,
+        loginInput,
+        setLoginInput,
+        loginPassword,
+        setLoginPassword,
         signupHandler,
+        loginHandler,
+        currentUser,
       }}
     >
       {children}
