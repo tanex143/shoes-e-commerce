@@ -1,6 +1,7 @@
 import { createContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { productsData } from './productsData';
+import { message } from 'antd';
 
 export const ProductsContext = createContext();
 
@@ -17,8 +18,8 @@ export const ContextProvider = ({ children }) => {
   const [signupPassword, setSignupPassword] = useState('');
   const [signupCPassword, setSignupCPassword] = useState('');
 
-  const [loginInput, setLoginInput] = useState('');
-  const [loginPassword, setLoginPassword] = useState('');
+  const [loginUsernameInput, setLoginUsernameInput] = useState('');
+  const [loginPasswordInput, setLoginPasswordInput] = useState('');
 
   const [currentUser, setCurrentUser] = useState([
     { username: '', password: '' },
@@ -150,18 +151,30 @@ export const ContextProvider = ({ children }) => {
 
   const loginHandler = (e) => {
     e.preventDefault();
+    let statusMessage = '';
 
-    if (
-      users.filter((u) => u.username.includes(loginInput)) &&
-      users.filter((p) => p.password.includes(loginPassword))
-    ) {
-      setCurrentUser([{ username: loginInput, password: loginPassword }]);
-      console.log('login');
-      history.push('/');
-    } else {
-      console.log('error login');
-      return history.push('/login');
-    }
+    users.map((user) => {
+      if (
+        user.username === loginUsernameInput &&
+        user.password === loginPasswordInput
+      ) {
+        setCurrentUser([
+          { username: loginUsernameInput, password: loginPasswordInput },
+        ]);
+        console.log('login');
+        statusMessage = message.success('Login Successfully');
+        setLoginUsernameInput('');
+        setLoginPasswordInput('');
+        history.push('/');
+      } else {
+        console.log('error login');
+        statusMessage = message.error('Username or Password is incorrect!');
+        setLoginUsernameInput('');
+        setLoginPasswordInput('');
+        return history.push('/login');
+      }
+      return statusMessage;
+    });
   };
 
   return (
@@ -192,10 +205,10 @@ export const ContextProvider = ({ children }) => {
         setSignupPassword,
         signupCPassword,
         setSignupCPassword,
-        loginInput,
-        setLoginInput,
-        loginPassword,
-        setLoginPassword,
+        loginUsernameInput,
+        setLoginUsernameInput,
+        loginPasswordInput,
+        setLoginPasswordInput,
         signupHandler,
         loginHandler,
         currentUser,

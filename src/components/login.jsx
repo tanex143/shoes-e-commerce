@@ -17,13 +17,14 @@ const Login = () => {
     setSignupPassword,
     signupCPassword,
     setSignupCPassword,
-    loginInput,
-    setLoginInput,
-    loginPassword,
-    setLoginPassword,
+    loginUsernameInput,
+    setLoginUsernameInput,
+    loginPasswordInput,
+    setLoginPasswordInput,
     signupHandler,
     loginHandler,
   } = useContext(ProductsContext);
+
   return (
     <div className='bg-bluegray-200 h-100vh'>
       <div className='container mx-auto pt-24'>
@@ -56,11 +57,13 @@ const Login = () => {
               <form onSubmit={loginHandler}>
                 <Input
                   className='mb-5'
+                  type='email'
                   size='large'
                   placeholder='Username'
-                  value={loginInput}
-                  onChange={(e) => setLoginInput(e.target.value)}
+                  value={loginUsernameInput}
+                  onChange={(e) => setLoginUsernameInput(e.target.value)}
                   autoFocus
+                  required
                   prefix={
                     <FontAwesomeIcon
                       icon={faUserAlt}
@@ -72,8 +75,9 @@ const Login = () => {
                   className='mb-5'
                   size='large'
                   placeholder='Password'
-                  value={loginPassword}
-                  onChange={(e) => setLoginPassword(e.target.value)}
+                  value={loginPasswordInput}
+                  onChange={(e) => setLoginPasswordInput(e.target.value)}
+                  required
                   prefix={
                     <FontAwesomeIcon
                       icon={faLock}
