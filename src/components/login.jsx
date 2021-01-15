@@ -3,8 +3,8 @@ import { faUserAlt } from '@fortawesome/free-solid-svg-icons';
 import { Input, message } from 'antd';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
-import { ProductsContext } from '../contextProvider';
 import logo from '../img/logo.png';
+import { loginContext } from './../ContextLoginProvider';
 
 const Login = () => {
   const {
@@ -12,18 +12,18 @@ const Login = () => {
     signupView,
     loginViewHandler,
     signupInput,
-    setSignupInput,
     signupPassword,
     setSignupPassword,
     signupCPassword,
     setSignupCPassword,
     loginUsernameInput,
-    setLoginUsernameInput,
     loginPasswordInput,
     setLoginPasswordInput,
     signupHandler,
     loginHandler,
-  } = useContext(ProductsContext);
+    signupOnChangeHandler,
+    loginOnChangeHandler,
+  } = useContext(loginContext);
 
   return (
     <div className='bg-bluegray-200 h-100vh'>
@@ -61,7 +61,7 @@ const Login = () => {
                   size='large'
                   placeholder='Username'
                   value={loginUsernameInput}
-                  onChange={(e) => setLoginUsernameInput(e.target.value)}
+                  onChange={loginOnChangeHandler}
                   autoFocus
                   required
                   prefix={
@@ -109,7 +109,7 @@ const Login = () => {
                   type='email'
                   placeholder='Username'
                   value={signupInput}
-                  onChange={(e) => setSignupInput(e.target.value)}
+                  onChange={signupOnChangeHandler}
                   required
                   autoFocus
                   prefix={

@@ -11,25 +11,29 @@ export const ContextProvider = ({ children }) => {
   const [myCart, setMyCart] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [sizeSelection, setSizeSelecttion] = useState(false);
-  const [loginView, setLoginView] = useState(true);
-  const [signupView, setSignupView] = useState(false);
 
-  const [signupInput, setSignupInput] = useState('');
-  const [signupPassword, setSignupPassword] = useState('');
-  const [signupCPassword, setSignupCPassword] = useState('');
+  // const [loginView, setLoginView] = useState(true);
+  // const [signupView, setSignupView] = useState(false);
 
-  const [loginUsernameInput, setLoginUsernameInput] = useState('');
-  const [loginPasswordInput, setLoginPasswordInput] = useState('');
+  // const [signupInput, setSignupInput] = useState('');
+  // const [signupPassword, setSignupPassword] = useState('');
+  // const [signupCPassword, setSignupCPassword] = useState('');
 
-  const [currentUser, setCurrentUser] = useState([
-    { username: '', password: '' },
-  ]);
+  // const [loginUsernameInput, setLoginUsernameInput] = useState('');
+  // const [loginPasswordInput, setLoginPasswordInput] = useState('');
 
-  const history = useHistory();
+  // const [validUser, setValidUser] = useState(false);
 
-  const [users, setUsers] = useState([
-    { username: 'tanex@yahoo.com', password: '123' },
-  ]);
+  // const [currentUser, setCurrentUser] = useState({
+  //   username: '',
+  //   password: '',
+  // });
+
+  // const history = useHistory();
+
+  // const [users, setUsers] = useState([
+  //   { username: 'tanex@yahoo.com', password: '123' },
+  // ]);
 
   const thousandsSeparatorsHandler = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -123,59 +127,97 @@ export const ContextProvider = ({ children }) => {
     setSizeSelecttion(true);
   };
 
-  const loginViewHandler = (choices) => {
-    if (choices === 'login') {
-      setLoginView(true);
-      setSignupView(false);
-    }
-    if (choices === 'signup') {
-      setLoginView(false);
-      setSignupView(true);
-    }
-  };
+  // const loginViewHandler = (choices) => {
+  //   if (choices === 'login') {
+  //     setLoginView(true);
+  //     setSignupView(false);
+  //   }
+  //   if (choices === 'signup') {
+  //     setLoginView(false);
+  //     setSignupView(true);
+  //   }
+  // };
 
-  const signupHandler = (e) => {
-    e.preventDefault();
+  // const signupOnChangeHandler = (e) => {
+  //   e.preventDefault();
 
-    if (signupPassword !== signupCPassword) {
-      return null;
-    } else {
-      setUsers([
-        ...users,
-        { username: signupInput, password: signupCPassword },
-      ]);
-    }
+  //   setSignupInput(e.target.value);
 
-    console.log(users);
-  };
+  //   const tempUsers = [...users];
 
-  const loginHandler = (e) => {
-    e.preventDefault();
-    let statusMessage = '';
+  //   const filtered = tempUsers.filter(
+  //     (user) => user.username === e.target.value
+  //   );
 
-    users.map((user) => {
-      if (
-        user.username === loginUsernameInput &&
-        user.password === loginPasswordInput
-      ) {
-        setCurrentUser([
-          { username: loginUsernameInput, password: loginPasswordInput },
-        ]);
-        console.log('login');
-        statusMessage = message.success('Login Successfully');
-        setLoginUsernameInput('');
-        setLoginPasswordInput('');
-        history.push('/');
-      } else {
-        console.log('error login');
-        statusMessage = message.error('Username or Password is incorrect!');
-        setLoginUsernameInput('');
-        setLoginPasswordInput('');
-        return history.push('/login');
-      }
-      return statusMessage;
-    });
-  };
+  //   if (filtered.length === 1) {
+  //     console.log('in list', filtered, tempUsers);
+  //     setValidUser(false);
+  //   } else {
+  //     console.log('not in list', filtered, tempUsers);
+  //     setValidUser(true);
+  //   }
+  //   setUsers(tempUsers);
+  // };
+
+  // const signupHandler = (e) => {
+  //   e.preventDefault();
+
+  //   const tempUsers = [...users];
+
+  //   let statusMessage = '';
+
+  //   if (!validUser) {
+  //     setSignupInput('');
+  //     setSignupPassword('');
+  //     setSignupCPassword('');
+  //     statusMessage = message.error('Account already exist. Please try again.');
+  //     console.log('in list');
+  //     console.log(tempUsers);
+  //   } else {
+  //     setUsers([
+  //       ...tempUsers,
+  //       { username: signupInput, password: signupCPassword },
+  //     ]);
+  //     setSignupInput('');
+  //     setSignupPassword('');
+  //     setSignupCPassword('');
+
+  //     setLoginView(true);
+  //     setSignupView(false);
+  //     statusMessage = message.success('Account successfully created.');
+  //     console.log('not in list');
+  //     console.log(tempUsers);
+  //   }
+  // };
+
+  // const loginHandler = (e) => {
+  //   e.preventDefault();
+  //   let statusMessage = '';
+
+  //   users.map((user) => {
+  //     if (
+  //       user.username === loginUsernameInput &&
+  //       user.password === loginPasswordInput
+  //     ) {
+  //       setCurrentUser([
+  //         { username: loginUsernameInput, password: loginPasswordInput },
+  //       ]);
+  //       console.log('login');
+  //       statusMessage = message.success('Login Successfully');
+  //       setLoginUsernameInput('');
+  //       setLoginPasswordInput('');
+  //       history.push('/');
+  //     } else {
+  //       console.log('error login');
+  //       statusMessage = message.error('Username or Password is incorrect!');
+  //       setLoginUsernameInput('');
+  //       setLoginPasswordInput('');
+  //       return history.push('/login');
+  //     }
+  //     return statusMessage;
+  //   });
+  //   console.log(currentUser);
+  // };
 
   return (
     <ProductsContext.Provider
@@ -196,22 +238,24 @@ export const ContextProvider = ({ children }) => {
         sizeChoiceHandler,
         sizeSelection,
         setSizeSelecttion,
-        loginView,
-        signupView,
-        loginViewHandler,
-        signupInput,
-        setSignupInput,
-        signupPassword,
-        setSignupPassword,
-        signupCPassword,
-        setSignupCPassword,
-        loginUsernameInput,
-        setLoginUsernameInput,
-        loginPasswordInput,
-        setLoginPasswordInput,
-        signupHandler,
-        loginHandler,
-        currentUser,
+        // loginView,
+        // signupView,
+        // loginViewHandler,
+        // signupInput,
+        // setSignupInput,
+        // signupPassword,
+        // setSignupPassword,
+        // signupCPassword,
+        // setSignupCPassword,
+        // loginUsernameInput,
+        // setLoginUsernameInput,
+        // loginPasswordInput,
+        // setLoginPasswordInput,
+        // signupHandler,
+        // loginHandler,
+        // currentUser,
+        // users,
+        // signupOnChangeHandler,
       }}
     >
       {children}
