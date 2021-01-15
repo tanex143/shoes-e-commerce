@@ -57,7 +57,7 @@ const Login = () => {
               <form onSubmit={loginHandler}>
                 <Input
                   className='mb-5'
-                  type='email'
+                  type='text'
                   size='large'
                   placeholder='Username'
                   value={loginUsernameInput}
@@ -106,7 +106,7 @@ const Login = () => {
                 <Input
                   className='mb-5'
                   size='large'
-                  type='email'
+                  type='text'
                   placeholder='Username'
                   value={signupInput}
                   onChange={signupOnChangeHandler}

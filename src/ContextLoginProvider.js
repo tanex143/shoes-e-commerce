@@ -42,29 +42,19 @@ export const ContextLoginProvider = ({ children }) => {
 
   const signupOnChangeHandler = (e) => {
     e.preventDefault();
-
     setSignupInput(e.target.value);
 
     const tempUsers = [...users];
-
     const filtered = tempUsers.filter(
-      (user) => user.username === e.target.value.split('@')[0]
+      (user) => user.username === e.target.value
     );
 
-    if (filtered.length === 1) {
-      console.log('in list', filtered, tempUsers);
-      setValidUser(false);
-    } else {
-      console.log('not in list', filtered, tempUsers);
-      setValidUser(true);
-    }
+    filtered.length === 1 ? setValidUser(false) : setValidUser(true);
   };
 
   const signupHandler = (e) => {
     e.preventDefault();
-
     const tempUsers = [...users];
-
     let statusMessage = '';
 
     if (!validUser) {
@@ -72,12 +62,11 @@ export const ContextLoginProvider = ({ children }) => {
       setSignupPassword('');
       setSignupCPassword('');
       statusMessage = message.error('Account already exist. Please try again.');
-      console.log('in list');
       console.log(tempUsers);
     } else {
       setUsers([
         ...tempUsers,
-        { username: signupInput.split('@')[0], password: signupCPassword },
+        { username: signupInput, password: signupCPassword },
       ]);
       setSignupInput('');
       setSignupPassword('');
@@ -86,29 +75,22 @@ export const ContextLoginProvider = ({ children }) => {
       setLoginView(true);
       setSignupView(false);
       statusMessage = message.success('Account successfully created.');
-      console.log('not in list');
       console.log(tempUsers);
     }
+
+    return statusMessage;
   };
 
   const loginOnChangeHandler = (e) => {
     e.preventDefault();
-
     setLoginUsernameInput(e.target.value);
 
     const tempUsers = [...users];
-
     const filtered = tempUsers.filter(
-      (user) => user.username === e.target.value.split('@')[0]
+      (user) => user.username === e.target.value
     );
 
-    if (filtered.length === 1) {
-      console.log('in list', filtered, tempUsers);
-      setRegisteredUser(false);
-    } else {
-      console.log('not in list', filtered, tempUsers);
-      setRegisteredUser(true);
-    }
+    filtered.length === 1 ? setRegisteredUser(false) : setRegisteredUser(true);
   };
 
   const loginHandler = (e) => {
@@ -117,7 +99,7 @@ export const ContextLoginProvider = ({ children }) => {
     if (!registeredUser) {
       setCurrentUser([
         {
-          username: loginUsernameInput.split('@')[0],
+          username: loginUsernameInput,
           password: loginPasswordInput,
         },
       ]);
