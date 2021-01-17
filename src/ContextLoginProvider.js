@@ -18,10 +18,12 @@ export const ContextLoginProvider = ({ children }) => {
   const [validUser, setValidUser] = useState(false);
   const [registeredUser, setRegisteredUser] = useState(false);
 
-  const [currentUser, setCurrentUser] = useState({
-    username: '',
-    password: '',
-  });
+  const [currentUser, setCurrentUser] = useState([
+    {
+      username: '',
+      password: '',
+    },
+  ]);
 
   const history = useHistory();
 
@@ -104,13 +106,13 @@ export const ContextLoginProvider = ({ children }) => {
       statusMessage = message.success('Login Successfully');
       setLoginUsernameInput('');
       setLoginPasswordInput('');
-      history.push('/');
+      history.push('/productlist');
     } else {
       console.log('error login');
       statusMessage = message.error('Username or Password is incorrect!');
       setLoginUsernameInput('');
       setLoginPasswordInput('');
-      return history.push('/login');
+      return history.push('/');
     }
     return statusMessage;
   };

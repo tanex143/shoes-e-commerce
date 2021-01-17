@@ -77,7 +77,7 @@ const ProductDetails = () => {
                 </button>
               )}
               <Link
-                to='/'
+                to='/productlist'
                 onClick={() => setSizeSelecttion(false)}
                 className='py-2 px-4 border border-bluegray-500 hover:bg-bluegray-400 hover:text-white rounded uppercase text-xl'
               >
@@ -112,7 +112,7 @@ const ProductDetails = () => {
         </div>
         <div className='flex justify-center gap-5'>
           <Link
-            to='/'
+            to='/productlist'
             onClick={modalCancelHandler}
             className='py-1 px-3 rounded uppercase border border-lightblue-400 hover:bg-lightblue-400 hover:text-white transition-all duration-500 ease-in-out'
           >

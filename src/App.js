@@ -14,13 +14,13 @@ const App = () => {
       <ContextLoginProvider>
         <Switch>
           <Route path='/' exact>
+            <Login />
+          </Route>
+
+          <Route path='/productlist' exact>
             <Navbar />
             <ProductsList />
             <Footer />
-          </Route>
-
-          <Route path='/login' exact>
-            <Login />
           </Route>
 
           <Route path='/mycart' exact>

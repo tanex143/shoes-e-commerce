@@ -26,7 +26,7 @@ const MyCartDetails = () => {
               description='Your cart is empty'
             />
             <Link
-              to='/'
+              to='/productlist'
               className='text-2xl uppercase py-2 px-8 text-white hover:text-white bg-lightblue-400 hover:bg-lightblue-500 rounded'
             >
               shop now
@@ -105,7 +105,7 @@ const MyCartDetails = () => {
             </div>
             <div className='flex justify-center gap-5'>
               <Link
-                to='/'
+                to='/productlist'
                 className='uppercase tracking-wide py-2 px-5 bg-lightblue-400 text-white hover:bg-lightblue-500 hover:text-white rounded right-0'
               >
                 shop again
