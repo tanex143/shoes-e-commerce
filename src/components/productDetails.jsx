@@ -1,7 +1,9 @@
 import { useContext } from 'react';
 import { ProductsContext } from '../contextProvider';
+import { loginContext } from './../ContextLoginProvider';
 import { Link } from 'react-router-dom';
 import { Modal, Carousel } from 'antd';
+import LoginAgain from './loginAgain';
 
 const ProductDetails = () => {
   const {
@@ -15,78 +17,87 @@ const ProductDetails = () => {
     sizeSelection,
     setSizeSelecttion,
   } = useContext(ProductsContext);
+  const { currentUser } = useContext(loginContext);
 
   return (
     <>
-      <div className='container mx-auto'>
-        <h1 className='text-center text-3xl font-semibold py-8'>
-          Product Details
-        </h1>
-        <div className='grid grid-cols-2 gap-5 pb-32'>
-          <Carousel autoplay dotPosition='bottom'>
-            {productDetailsDisplay.img.map((i, index) => (
-              <div key={index}>
-                <img src={`${i}`} alt='img' className='w-4/6 mx-auto rounded' />
-              </div>
-            ))}
-          </Carousel>
-          <div className='pt-16'>
-            <p className='text-xl tracking-wider uppercase text-gray-400'>
-              {productDetailsDisplay.type}
-            </p>
-            <h1 className='text-4xl py-2 font-semibold'>
-              {productDetailsDisplay.name}
-            </h1>
-            <p className='text-xl pb-2'>{productDetailsDisplay.brand}</p>
-            <p>{productDetailsDisplay.description}</p>
-            <div className='py-10 flex gap-5'>
-              {productDetailsDisplay.sizes.map((size) => (
-                <button
-                  key={size.id}
-                  onClick={() =>
-                    sizeChoiceHandler(productDetailsDisplay, size.id)
-                  }
-                  className='py-1 px-3 outline-none rounded border border-gray-500 uppercase text-sm hover:bg-bluegray-500 hover:text-white transition-all duration-500 ease-in-out focus:bg-bluegray-500 focus:outline-none focus:text-white'
-                >
-                  {size.size}
-                </button>
+      {currentUser[0].username ? (
+        <div className='container mx-auto'>
+          <h1 className='text-center text-3xl font-semibold py-8'>
+            Product Details
+          </h1>
+          <div className='grid grid-cols-2 gap-5 pb-32'>
+            <Carousel autoplay dotPosition='bottom'>
+              {productDetailsDisplay.img.map((i, index) => (
+                <div key={index}>
+                  <img
+                    src={`${i}`}
+                    alt='img'
+                    className='w-4/6 mx-auto rounded'
+                  />
+                </div>
               ))}
-            </div>
-            <p className='text-3xl font-semibold text-gray-700'>
-              Php {thousandsSeparatorsHandler(productDetailsDisplay.price)}
-            </p>
-            <div className='py-10 flex gap-6'>
-              {productDetailsDisplay.inCart === true ? (
-                <p className='py-2 px-4 rounded bg-lime-400 uppercase text-xl'>
-                  Added to Cart
-                </p>
-              ) : (
-                <button
-                  onClick={
-                    sizeSelection
-                      ? () => addToCartHandler(productDetailsDisplay.id)
-                      : null
-                  }
-                  className={`py-2 px-4 ${
-                    sizeSelection
-                      ? 'bg-bluegray-500 hover:bg-bluegray-600'
-                      : 'bg-red-500 hover:bg-red-600'
-                  }  text-white  rounded uppercase text-xl`}
+            </Carousel>
+            <div className='pt-16'>
+              <p className='text-xl tracking-wider uppercase text-gray-400'>
+                {productDetailsDisplay.type}
+              </p>
+              <h1 className='text-4xl py-2 font-semibold'>
+                {productDetailsDisplay.name}
+              </h1>
+              <p className='text-xl pb-2'>{productDetailsDisplay.brand}</p>
+              <p>{productDetailsDisplay.description}</p>
+              <div className='py-10 flex gap-5'>
+                {productDetailsDisplay.sizes.map((size) => (
+                  <button
+                    key={size.id}
+                    onClick={() =>
+                      sizeChoiceHandler(productDetailsDisplay, size.id)
+                    }
+                    className='py-1 px-3 outline-none rounded border border-gray-500 uppercase text-sm hover:bg-bluegray-500 hover:text-white transition-all duration-500 ease-in-out focus:bg-bluegray-500 focus:outline-none focus:text-white'
+                  >
+                    {size.size}
+                  </button>
+                ))}
+              </div>
+              <p className='text-3xl font-semibold text-gray-700'>
+                Php {thousandsSeparatorsHandler(productDetailsDisplay.price)}
+              </p>
+              <div className='py-10 flex gap-6'>
+                {productDetailsDisplay.inCart === true ? (
+                  <p className='py-2 px-4 rounded bg-lime-400 uppercase text-xl'>
+                    Added to Cart
+                  </p>
+                ) : (
+                  <button
+                    onClick={
+                      sizeSelection
+                        ? () => addToCartHandler(productDetailsDisplay.id)
+                        : null
+                    }
+                    className={`py-2 px-4 ${
+                      sizeSelection
+                        ? 'bg-bluegray-500 hover:bg-bluegray-600'
+                        : 'bg-red-500 hover:bg-red-600'
+                    }  text-white  rounded uppercase text-xl`}
+                  >
+                    {sizeSelection ? 'add to cart' : 'please select your size'}
+                  </button>
+                )}
+                <Link
+                  to='/productlist'
+                  onClick={() => setSizeSelecttion(false)}
+                  className='py-2 px-4 border border-bluegray-500 hover:bg-bluegray-400 hover:text-white rounded uppercase text-xl'
                 >
-                  {sizeSelection ? 'add to cart' : 'please select your size'}
-                </button>
-              )}
-              <Link
-                to='/productlist'
-                onClick={() => setSizeSelecttion(false)}
-                className='py-2 px-4 border border-bluegray-500 hover:bg-bluegray-400 hover:text-white rounded uppercase text-xl'
-              >
-                choose another
-              </Link>
+                  choose another
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <LoginAgain />
+      )}
       {console.log('product selected', productDetailsDisplay)}
       {console.log('inCart', myCart)}
 

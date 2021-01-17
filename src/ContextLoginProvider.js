@@ -117,6 +117,18 @@ export const ContextLoginProvider = ({ children }) => {
     return statusMessage;
   };
 
+  const logoutHandler = (e) => {
+    e.preventDefault();
+
+    history.replace('/');
+    setCurrentUser([
+      {
+        username: '',
+        password: '',
+      },
+    ]);
+  };
+
   return (
     <loginContext.Provider
       value={{
@@ -136,6 +148,7 @@ export const ContextLoginProvider = ({ children }) => {
         loginHandler,
         signupOnChangeHandler,
         loginOnChangeHandler,
+        logoutHandler,
       }}
     >
       {children}
