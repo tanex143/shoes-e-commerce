@@ -25,9 +25,7 @@ export const ContextLoginProvider = ({ children }) => {
 
   const history = useHistory();
 
-  const [users, setUsers] = useState([
-    { username: 'tanex@yahoo.com', password: '123' },
-  ]);
+  const [users, setUsers] = useState([{ username: 'tanex', password: '123' }]);
 
   const loginViewHandler = (choices) => {
     if (choices === 'login') {
@@ -75,7 +73,6 @@ export const ContextLoginProvider = ({ children }) => {
       setLoginView(true);
       setSignupView(false);
       statusMessage = message.success('Account successfully created.');
-      console.log(tempUsers);
     }
 
     return statusMessage;
@@ -103,7 +100,7 @@ export const ContextLoginProvider = ({ children }) => {
           password: loginPasswordInput,
         },
       ]);
-      console.log('login');
+      console.log('Logged In Successfully');
       statusMessage = message.success('Login Successfully');
       setLoginUsernameInput('');
       setLoginPasswordInput('');
@@ -115,7 +112,6 @@ export const ContextLoginProvider = ({ children }) => {
       setLoginPasswordInput('');
       return history.push('/login');
     }
-    console.log(currentUser);
     return statusMessage;
   };
 

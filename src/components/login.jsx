@@ -107,6 +107,8 @@ const Login = () => {
                   className='mb-5'
                   size='large'
                   type='text'
+                  minLength='3'
+                  maxLength='30'
                   placeholder='Username'
                   value={signupInput}
                   onChange={signupOnChangeHandler}
@@ -124,6 +126,8 @@ const Login = () => {
                   size='large'
                   placeholder='Password'
                   value={signupPassword}
+                  minLength='3'
+                  maxLength='30'
                   onChange={(e) => setSignupPassword(e.target.value)}
                   required
                   prefix={
@@ -146,6 +150,8 @@ const Login = () => {
                   size='large'
                   placeholder='Confirm Password'
                   value={signupCPassword}
+                  minLength='3'
+                  maxLength='30'
                   onChange={(e) => setSignupCPassword(e.target.value)}
                   required
                   prefix={
