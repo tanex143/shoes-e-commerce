@@ -136,6 +136,7 @@ export const ContextLoginProvider = ({ children }) => {
   const logoutHandler = (e) => {
     e.preventDefault();
 
+    setUsers([...users, currentUser]);
     history.replace('/');
     setCurrentUser([
       {
@@ -193,8 +194,10 @@ export const ContextLoginProvider = ({ children }) => {
 
   const removeItemHandler = (id) => {
     let tempProducts = [...allProductsData];
-    let tempCart = [...currentUser[0]];
-    const filtered = tempCart.cart.filter((f) => f.id !== id);
+    let tempCart = [...currentUser];
+    let indexItem = tempCart[0].cart.findIndex((f) => f.id === id);
+
+    tempCart[0].cart.splice(indexItem, 1);
 
     let index = tempProducts.findIndex((f) => f.id === id);
     let product = tempProducts[index];
@@ -206,7 +209,7 @@ export const ContextLoginProvider = ({ children }) => {
       { id: 102, size: 'extra large', choice: false },
       { id: 103, size: '2x extra large', choice: false },
     ];
-    setUsers(filtered);
+    setCurrentUser(tempCart);
     setAllProductsData(tempProducts);
     setSizeSelecttion(false);
   };
@@ -216,11 +219,15 @@ export const ContextLoginProvider = ({ children }) => {
     setSizeSelecttion(false);
   };
 
-  const clearCartHandler = (userId) => {
-    let tempCart = [...currentUser[0]];
+  const clearCartHandler = () => {
+    let tempProducts = [...allProductsData];
+    let tempCart = [...currentUser];
+
+    tempCart[0].cart = [];
+
     setSizeSelecttion(false);
 
-    tempCart.cart.map((item) => {
+    tempProducts.map((item) => {
       item.inCart = false;
       item.count = 0;
       item.total = 0;
@@ -230,7 +237,7 @@ export const ContextLoginProvider = ({ children }) => {
         { id: 102, size: 'extra large', choice: false },
         { id: 103, size: '2x extra large', choice: false },
       ];
-      return setUsers([]);
+      return setCurrentUser(tempCart);
     });
   };
 

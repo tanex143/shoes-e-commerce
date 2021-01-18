@@ -22,7 +22,7 @@ const MyCartDetails = () => {
           <h1 className='text-3xl text-center tracking-wider font-semibold py-1 my-5 uppercase bg-bluegray-300 rounded mx-auto'>
             My Cart
           </h1>
-          {currentUser[0].length < 1 ? (
+          {currentUser[0].cart.length < 1 ? (
             <div className='mx-auto text-center my-20'>
               <Empty
                 className='py-14 uppercase tracking-wider'
@@ -114,7 +114,7 @@ const MyCartDetails = () => {
                   shop again
                 </Link>
                 <button
-                  onClick={() => clearCartHandler(currentUser[0].id)}
+                  onClick={clearCartHandler}
                   className='uppercase tracking-wide py-2 px-5 bg-red-500 text-white hover:bg-red-600 rounded right-0'
                 >
                   clear cart
