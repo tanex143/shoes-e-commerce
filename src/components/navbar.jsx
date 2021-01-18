@@ -10,7 +10,7 @@ import { Badge, Menu, Dropdown } from 'antd';
 import logo from '../img/logo.png';
 
 const Navbar = () => {
-  const { currentUser, logoutHandler, myCart } = useContext(loginContext);
+  const { currentUser, logoutHandler } = useContext(loginContext);
 
   const menu = (
     <Menu>
@@ -49,7 +49,7 @@ const Navbar = () => {
                   </span>
                 </Dropdown>
                 <Link to='/mycart' className='ml-10 px-2 '>
-                  <Badge count={myCart.length} overflowCount={10}>
+                  <Badge count={currentUser[0].cart.length} overflowCount={10}>
                     <FontAwesomeIcon
                       icon={faShoppingCart}
                       className='text-3xl cursor-pointer text-gray-700 hover:text-black'

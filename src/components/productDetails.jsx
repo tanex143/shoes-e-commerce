@@ -71,7 +71,11 @@ const ProductDetails = () => {
                   <button
                     onClick={
                       sizeSelection
-                        ? () => addToCartHandler(productDetailsDisplay.id)
+                        ? () =>
+                            addToCartHandler(
+                              productDetailsDisplay.id,
+                              currentUser[0]
+                            )
                         : null
                     }
                     className={`py-2 px-4 ${

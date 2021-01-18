@@ -14,6 +14,7 @@ const ProductsList = () => {
 
   return (
     <>
+      {console.log(currentUser)}
       {currentUser[0].username ? (
         <div className='container mx-auto py-8'>
           <h1 className='text-center font-semibold text-5xl py-5'>

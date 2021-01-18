@@ -8,7 +8,6 @@ import LoginAgain from './loginAgain';
 
 const MyCartDetails = () => {
   const {
-    myCart,
     thousandsSeparatorsHandler,
     quantityHandler,
     removeItemHandler,
@@ -17,12 +16,13 @@ const MyCartDetails = () => {
   } = useContext(loginContext);
   return (
     <>
+      {console.log('current user', currentUser)}
       {currentUser[0].username ? (
         <div className='container mx-auto'>
           <h1 className='text-3xl text-center tracking-wider font-semibold py-1 my-5 uppercase bg-bluegray-300 rounded mx-auto'>
             My Cart
           </h1>
-          {myCart.length < 1 ? (
+          {currentUser[0].length < 1 ? (
             <div className='mx-auto text-center my-20'>
               <Empty
                 className='py-14 uppercase tracking-wider'
@@ -47,7 +47,7 @@ const MyCartDetails = () => {
                 <h1 className='pb-4'>Sub-Total</h1>
               </div>
               <div>
-                {myCart.map((item) => (
+                {currentUser[0].cart.map((item) => (
                   <div
                     key={item.id}
                     className='grid grid-cols-7 gap-5 text-center my-5 rounded bg-truegray-100'
@@ -114,7 +114,7 @@ const MyCartDetails = () => {
                   shop again
                 </Link>
                 <button
-                  onClick={clearCartHandler}
+                  onClick={() => clearCartHandler(currentUser[0].id)}
                   className='uppercase tracking-wide py-2 px-5 bg-red-500 text-white hover:bg-red-600 rounded right-0'
                 >
                   clear cart
@@ -125,7 +125,7 @@ const MyCartDetails = () => {
                 <p className='text-xl font-semibold'>
                   ₱
                   {thousandsSeparatorsHandler(
-                    myCart.reduce(
+                    currentUser[0].cart.reduce(
                       (variable, currentValue) => variable + currentValue.total,
                       0
                     )
