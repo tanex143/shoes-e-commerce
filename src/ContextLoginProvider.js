@@ -136,14 +136,18 @@ export const ContextLoginProvider = ({ children }) => {
   const logoutHandler = (e) => {
     e.preventDefault();
 
-    setUsers([...users, currentUser]);
+    const tempUsers = [...users];
+
+    let index = tempUsers.findIndex((f) => f.id === currentUser[0].id);
+    let filtered = tempUsers[index];
+
+    filtered.id = currentUser[0].id;
+    filtered.username = currentUser[0].username;
+    filtered.password = currentUser[0].password;
+    filtered.cart = currentUser[0].cart;
+    setUsers(tempUsers);
     history.replace('/');
-    setCurrentUser([
-      {
-        username: '',
-        password: '',
-      },
-    ]);
+    // setCurrentUser([{ id: null, username: '', password: '', cart: [] }]);
   };
 
   ///////////////////////////////////////////////////////////

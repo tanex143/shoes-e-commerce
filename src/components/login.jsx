@@ -23,10 +23,12 @@ const Login = () => {
     loginHandler,
     signupOnChangeHandler,
     loginOnChangeHandler,
+    users,
   } = useContext(loginContext);
 
   return (
     <div className='bg-bluegray-200 h-100vh'>
+      {console.log('all users', users)}
       <div className='container mx-auto pt-24'>
         <div className='w-full '>
           <div className='flex justify-center mx-auto bg-white rounded-full w-64 shadow-lg'>
