@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import { ProductsContext } from '../contextProvider';
 import { loginContext } from './../ContextLoginProvider';
 import { Link } from 'react-router-dom';
 import { Modal, Carousel } from 'antd';
@@ -16,8 +15,8 @@ const ProductDetails = () => {
     sizeChoiceHandler,
     sizeSelection,
     setSizeSelecttion,
-  } = useContext(ProductsContext);
-  const { currentUser } = useContext(loginContext);
+    currentUser,
+  } = useContext(loginContext);
 
   return (
     <>

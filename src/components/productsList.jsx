@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { ProductsContext } from '../contextProvider';
 import Card from './card';
 import { loginContext } from './../ContextLoginProvider';
 import LoginAgain from './loginAgain';
@@ -10,9 +9,8 @@ const ProductsList = () => {
     allProductsData,
     setProductDetailsDisplay,
     thousandsSeparatorsHandler,
-  } = useContext(ProductsContext);
-
-  const { currentUser } = useContext(loginContext);
+    currentUser,
+  } = useContext(loginContext);
 
   return (
     <>

@@ -18,7 +18,7 @@ const Login = () => {
     setSignupCPassword,
     loginUsernameInput,
     loginPasswordInput,
-    setLoginPasswordInput,
+    setLoginUsernameInput,
     signupHandler,
     loginHandler,
     signupOnChangeHandler,
@@ -61,7 +61,7 @@ const Login = () => {
                   size='large'
                   placeholder='Username'
                   value={loginUsernameInput}
-                  onChange={loginOnChangeHandler}
+                  onChange={(e) => setLoginUsernameInput(e.target.value)}
                   autoFocus
                   required
                   prefix={
@@ -76,7 +76,7 @@ const Login = () => {
                   size='large'
                   placeholder='Password'
                   value={loginPasswordInput}
-                  onChange={(e) => setLoginPasswordInput(e.target.value)}
+                  onChange={loginOnChangeHandler}
                   required
                   prefix={
                     <FontAwesomeIcon

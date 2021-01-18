@@ -5,14 +5,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
-import { ProductsContext } from '../contextProvider';
 import { loginContext } from './../ContextLoginProvider';
 import { Badge, Menu, Dropdown } from 'antd';
 import logo from '../img/logo.png';
 
 const Navbar = () => {
-  const { currentUser, logoutHandler } = useContext(loginContext);
-  const { myCart } = useContext(ProductsContext);
+  const { currentUser, logoutHandler, myCart } = useContext(loginContext);
 
   const menu = (
     <Menu>

@@ -6,36 +6,33 @@ import ProductDetails from './components/productDetails';
 import MyCartDetails from './components/myCartDetails';
 import PageNotFound from './components/pageNotFound';
 import Login from './components/login';
-import { ContextLoginProvider } from './ContextLoginProvider';
 
 const App = () => {
   return (
     <>
-      <ContextLoginProvider>
-        <Switch>
-          <Route path='/' exact>
-            <Login />
-          </Route>
+      <Switch>
+        <Route path='/' exact>
+          <Login />
+        </Route>
 
-          <Route path='/productlist' exact>
-            <Navbar />
-            <ProductsList />
-            <Footer />
-          </Route>
+        <Route path='/productlist' exact>
+          <Navbar />
+          <ProductsList />
+          <Footer />
+        </Route>
 
-          <Route path='/mycart' exact>
-            <Navbar />
-            <MyCartDetails />
-          </Route>
+        <Route path='/mycart' exact>
+          <Navbar />
+          <MyCartDetails />
+        </Route>
 
-          <Route path='/productdetails/:title'>
-            <Navbar />
-            <ProductDetails />
-          </Route>
+        <Route path='/productdetails/:title'>
+          <Navbar />
+          <ProductDetails />
+        </Route>
 
-          <Route component={PageNotFound} />
-        </Switch>
-      </ContextLoginProvider>
+        <Route component={PageNotFound} />
+      </Switch>
     </>
   );
 };

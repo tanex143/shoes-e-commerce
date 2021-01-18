@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ContextProvider } from './contextProvider';
+import { ContextLoginProvider } from './ContextLoginProvider';
 import { BrowserRouter } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import './assets/main.css';
@@ -11,9 +11,9 @@ import './assets/custom.css';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ContextProvider>
+      <ContextLoginProvider>
         <App />
-      </ContextProvider>
+      </ContextLoginProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
