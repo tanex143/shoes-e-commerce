@@ -7,7 +7,7 @@ const Card = ({ data, thousandsSeparatorsHandler }) => {
 
       <h1 className='text-2xl pl-2'>{data.name}</h1>
       <p className='text-2xl absolute left-0 bottom-0 pl-2 pb-1'>
-        ₱{thousandsSeparatorsHandler(data.price)}
+        ${thousandsSeparatorsHandler(data.price)}
       </p>
     </div>
   );

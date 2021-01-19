@@ -5,6 +5,7 @@ import { loginContext } from './../ContextLoginProvider';
 import { Link } from 'react-router-dom';
 import { Empty } from 'antd';
 import LoginAgain from './loginAgain';
+import PayPalButton from './payPalButton';
 
 const MyCartDetails = () => {
   const {
@@ -13,12 +14,14 @@ const MyCartDetails = () => {
     removeItemHandler,
     clearCartHandler,
     currentUser,
+    totalValue,
+    totalValueHandler,
   } = useContext(loginContext);
   return (
     <>
       {console.log('current user', currentUser)}
       {currentUser[0].username ? (
-        <div className='container mx-auto'>
+        <div className='container mx-auto px-4'>
           <h1 className='text-3xl text-center tracking-wider font-semibold py-1 my-5 uppercase bg-bluegray-300 rounded mx-auto'>
             My Cart
           </h1>
@@ -37,7 +40,7 @@ const MyCartDetails = () => {
             </div>
           ) : (
             <div>
-              <div className='grid grid-cols-7 text-center text-2xl font-semibold border-b-2'>
+              <div className='hidden lg:grid lg:grid-cols-7 lg:text-center lg:text-2xl lg:font-semibold lg:border-b-2'>
                 <h1 className='pb-4'>Products</h1>
                 <h1 className='pb-4'>Name</h1>
                 <h1 className='pb-4'>Size</h1>
@@ -46,33 +49,31 @@ const MyCartDetails = () => {
                 <h1 className='pb-4'>Remove</h1>
                 <h1 className='pb-4'>Sub-Total</h1>
               </div>
-              <div>
+              <div className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10'>
                 {currentUser[0].cart.map((item) => (
                   <div
                     key={item.id}
-                    className='grid grid-cols-7 gap-5 text-center my-5 rounded bg-truegray-100'
+                    className='flex flex-col w-52 lg:grid lg:grid-cols-7 lg:gap-5 lg:text-center lg:my-5 rounded bg-truegray-100'
                   >
                     <div>
-                      <div>
-                        <img
-                          src={item.img[0]}
-                          alt='img'
-                          className='w-11/12 mx-auto h-40 rounded'
-                        />
-                      </div>
+                      <img
+                        src={item.img[0]}
+                        alt='img'
+                        className='w-9/12 lg:w-11/12 mx-auto h-40 rounded'
+                      />
                     </div>
-                    <div className='flex justify-center items-center'>
+                    <div className='flex justify-start lg:justify-center items-center'>
                       <h1 className='text-2xl'>{item.name}</h1>
                     </div>
-                    <div className='flex justify-center items-center uppercase'>
+                    <div className='flex justify-start lg:justify-center items-center uppercase'>
                       <h1 className='text-2xl'>{item.sizes[0].size}</h1>
                     </div>
-                    <div className='flex justify-center items-center'>
+                    <div className='flex justify-start lg:justify-center items-center'>
                       <h1 className='text-2xl'>
-                        ₱{thousandsSeparatorsHandler(item.price)}
+                        ${thousandsSeparatorsHandler(item.price)}
                       </h1>
                     </div>
-                    <div className='flex justify-center items-center gap-5'>
+                    <div className='flex justify-center lg:justify-center items-center gap-5'>
                       {item.count < 2 ? (
                         ''
                       ) : (
@@ -91,16 +92,17 @@ const MyCartDetails = () => {
                         <FontAwesomeIcon icon={faPlus} className='' />
                       </div>
                     </div>
-                    <div className='flex justify-center items-center'>
+                    <div className='flex justify-start lg:justify-center items-center'>
                       <FontAwesomeIcon
                         icon={faTrashAlt}
                         className='text-2xl cursor-pointer text-red-400 hover:text-red-600'
                         onClick={() => removeItemHandler(item.id)}
                       />
                     </div>
-                    <div className='flex justify-center items-center'>
+                    <div className='flex justify-end lg:justify-center items-center'>
                       <h1 className='text-2xl'>
-                        ₱{thousandsSeparatorsHandler(item.total)}
+                        <span className='lg:hidden mr-1'>Subtotal:</span> $
+                        {thousandsSeparatorsHandler(item.total)}
                       </h1>
                     </div>
                   </div>
@@ -121,16 +123,14 @@ const MyCartDetails = () => {
                 </button>
               </div>
               <div className='flex justify-end gap-5 my-5'>
-                <h1 className='text-xl font-semibold'>Total:</h1>
-                <p className='text-xl font-semibold'>
-                  ₱
-                  {thousandsSeparatorsHandler(
-                    currentUser[0].cart.reduce(
-                      (variable, currentValue) => variable + currentValue.total,
-                      0
-                    )
-                  )}
+                <h1 className='text-2xl font-semibold'>Total:</h1>
+                <p className='text-3xl font-semibold'>
+                  {totalValueHandler(currentUser[0])}$
+                  {thousandsSeparatorsHandler(totalValue)}
                 </p>
+              </div>
+              <div className='pb-10 flex justify-end'>
+                <PayPalButton className='py-2' />
               </div>
             </div>
           )}

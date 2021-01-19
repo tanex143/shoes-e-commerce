@@ -8,7 +8,6 @@ const ProductDetails = () => {
   const {
     productDetailsDisplay,
     thousandsSeparatorsHandler,
-    myCart,
     addToCartHandler,
     isModalVisible,
     modalCancelHandler,
@@ -102,7 +101,6 @@ const ProductDetails = () => {
         <LoginAgain />
       )}
       {console.log('product selected', productDetailsDisplay)}
-      {console.log('inCart', myCart)}
 
       <Modal
         closable={false}

@@ -16,7 +16,7 @@ const ProductsList = () => {
     <>
       {console.log(currentUser)}
       {currentUser[0].username ? (
-        <div className='container mx-auto py-8'>
+        <div className='container mx-auto py-8 px-4'>
           <h1 className='text-center font-semibold text-5xl py-5'>
             Products List
           </h1>

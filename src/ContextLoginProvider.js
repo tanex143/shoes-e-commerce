@@ -19,7 +19,7 @@ export const ContextLoginProvider = ({ children }) => {
 
   const [validUser, setValidUser] = useState(false);
   const [registeredUser, setRegisteredUser] = useState(false);
-
+  const [totalValue, setTotalValue] = useState(0);
   const [currentUser, setCurrentUser] = useState([
     { id: null, username: '', password: '', cart: [] },
   ]);
@@ -147,7 +147,8 @@ export const ContextLoginProvider = ({ children }) => {
     filtered.cart = currentUser[0].cart;
     setUsers(tempUsers);
     history.replace('/');
-    // setCurrentUser([{ id: null, username: '', password: '', cart: [] }]);
+    setCurrentUser([{ id: null, username: '', password: '', cart: [] }]);
+    setTotalValue(0);
   };
 
   ///////////////////////////////////////////////////////////
@@ -230,6 +231,7 @@ export const ContextLoginProvider = ({ children }) => {
     tempCart[0].cart = [];
 
     setSizeSelecttion(false);
+    setTotalValue(0);
 
     tempProducts.map((item) => {
       item.inCart = false;
@@ -257,6 +259,15 @@ export const ContextLoginProvider = ({ children }) => {
     setSizeSelecttion(true);
   };
   /////////////////////////////////////////////////////////
+
+  const totalValueHandler = (user) => {
+    let total = user.cart.reduce(
+      (variable, currentValue) => variable + currentValue.total,
+      0
+    );
+
+    setTotalValue(total);
+  };
 
   return (
     <loginContext.Provider
@@ -293,6 +304,9 @@ export const ContextLoginProvider = ({ children }) => {
         sizeSelection,
         setSizeSelecttion,
         users,
+        totalValue,
+        setTotalValue,
+        totalValueHandler,
       }}
     >
       {children}

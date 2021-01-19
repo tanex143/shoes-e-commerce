@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <>
       {currentUser[0].username && (
-        <div className='py-3 bg-bluegray-200 shadow-md'>
+        <div className='py-3 bg-bluegray-200 shadow-md px-4'>
           <div className='container mx-auto'>
             <div className='flex justify-between'>
               <div className='flex'>
