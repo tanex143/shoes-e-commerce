@@ -25,22 +25,26 @@ const Navbar = () => {
   return (
     <>
       {currentUser[0].username && (
-        <div className='py-3 bg-bluegray-200 shadow-md px-4'>
+        <div className='sm:py-3 pb-1 pt-3 bg-bluegray-200 shadow-md px-4'>
           <div className='container mx-auto'>
             <div className='flex justify-between'>
               <div className='flex'>
-                <img src={logo} alt='logo' className='mr-1 w-16' />
+                <Link to='/productlist' className='hover:text-black'>
+                  <img src={logo} alt='logo' className='mr-1 w-16' />
+                </Link>
                 <Link
                   to='/productlist'
-                  className='text-2xl font-semibold tracking-wide logo-font hover:text-black'
+                  className='hidden sm:block text-2xl font-semibold tracking-wide logo-font hover:text-black'
                 >
                   SHOES
                 </Link>
               </div>
               <div className='flex'>
-                <h1 className='mr-1 text-2xl font-semibold'>Welcome!</h1>
+                <h1 className='mr-1 sm:text-2xl text-lg font-semibold'>
+                  Welcome!
+                </h1>
                 <Dropdown overlay={menu}>
-                  <span className='ant-dropdown-link text-2xl font-semibold cursor-pointer'>
+                  <span className='ant-dropdown-link sm:text-2xl text-lg font-semibold cursor-pointer'>
                     {currentUser[0].username}
                     <FontAwesomeIcon
                       icon={faChevronDown}
@@ -52,7 +56,7 @@ const Navbar = () => {
                   <Badge count={currentUser[0].cart.length} overflowCount={10}>
                     <FontAwesomeIcon
                       icon={faShoppingCart}
-                      className='text-3xl cursor-pointer text-gray-700 hover:text-black'
+                      className='sm:text-3xl text-2xl cursor-pointer text-gray-700 hover:text-black'
                     />
                   </Badge>
                 </Link>

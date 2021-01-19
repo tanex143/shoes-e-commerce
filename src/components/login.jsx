@@ -27,7 +27,7 @@ const Login = () => {
 
   return (
     <div className='bg-bluegray-200 h-100vh'>
-      <div className='container mx-auto pt-24'>
+      <div className='container mx-auto sm:pt-24 pt-12 px-2'>
         <div className='w-full '>
           <div className='flex justify-center mx-auto bg-white rounded-full w-64 shadow-lg'>
             <img src={logo} alt='img' className='w-64 h-64' />

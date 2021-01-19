@@ -156,6 +156,14 @@ export const ContextLoginProvider = ({ children }) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
 
+  const productDetailsDisplayHandler = (data) => {
+    setProductDetailsDisplay(data);
+
+    window.scrollTo({
+      top: 0,
+    });
+  };
+
   const addToCartHandler = (id, currentuser) => {
     let tempProducts = [...allProductsData];
     let index = tempProducts.findIndex((f) => f.id === id);
@@ -294,6 +302,7 @@ export const ContextLoginProvider = ({ children }) => {
         setProductDetailsDisplay,
         productDetailsDisplay,
         thousandsSeparatorsHandler,
+        productDetailsDisplayHandler,
         addToCartHandler,
         isModalVisible,
         modalCancelHandler,

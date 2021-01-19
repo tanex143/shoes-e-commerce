@@ -20,11 +20,11 @@ const ProductDetails = () => {
   return (
     <>
       {currentUser[0].username ? (
-        <div className='container mx-auto'>
+        <div className='container mx-auto px-4'>
           <h1 className='text-center text-3xl font-semibold py-8'>
             Product Details
           </h1>
-          <div className='grid grid-cols-2 gap-5 pb-32'>
+          <div className='grid lg:grid-cols-2 grid-cols-1 gap-5'>
             <Carousel autoplay dotPosition='bottom'>
               {productDetailsDisplay.img.map((i, index) => (
                 <div key={index}>
@@ -61,9 +61,9 @@ const ProductDetails = () => {
               <p className='text-3xl font-semibold text-gray-700'>
                 Php {thousandsSeparatorsHandler(productDetailsDisplay.price)}
               </p>
-              <div className='py-10 flex gap-6'>
+              <div className='py-10 flex sm:flex-row flex-col gap-6'>
                 {productDetailsDisplay.inCart === true ? (
-                  <p className='py-2 px-4 rounded bg-lime-400 uppercase text-xl'>
+                  <p className='py-2 px-4 rounded bg-lime-400 uppercase text-xl text-center'>
                     Added to Cart
                   </p>
                 ) : (
@@ -89,7 +89,7 @@ const ProductDetails = () => {
                 <Link
                   to='/productlist'
                   onClick={() => setSizeSelecttion(false)}
-                  className='py-2 px-4 border border-bluegray-500 hover:bg-bluegray-400 hover:text-white rounded uppercase text-xl'
+                  className='py-2 px-4 border border-bluegray-500 hover:bg-bluegray-400 hover:text-white rounded uppercase text-xl text-center'
                 >
                   choose another
                 </Link>
@@ -112,7 +112,11 @@ const ProductDetails = () => {
           item added to cart
         </p>
         <div className='w-full py-2'>
-          <img src={productDetailsDisplay.img[0]} alt='img' />
+          <img
+            src={productDetailsDisplay.img[0]}
+            alt='img'
+            className='h-72 w-full sm:h-full'
+          />
         </div>
         <div className='flex justify-between gap-5 py-5'>
           <h1 className='text-2xl font-semibold'>

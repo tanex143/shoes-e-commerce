@@ -7,7 +7,7 @@ import LoginAgain from './loginAgain';
 const ProductsList = () => {
   const {
     allProductsData,
-    setProductDetailsDisplay,
+    productDetailsDisplayHandler,
     thousandsSeparatorsHandler,
     currentUser,
   } = useContext(loginContext);
@@ -26,7 +26,7 @@ const ProductsList = () => {
               <Link
                 key={data.id}
                 to={`/productdetails/${data.name}`}
-                onClick={() => setProductDetailsDisplay(data)}
+                onClick={() => productDetailsDisplayHandler(data)}
                 className='hover:text-black'
               >
                 <Card

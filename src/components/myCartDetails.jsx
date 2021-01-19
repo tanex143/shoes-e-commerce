@@ -1,4 +1,4 @@
-import { faMinus, faPlus, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext } from 'react';
 import { loginContext } from './../ContextLoginProvider';
@@ -40,40 +40,33 @@ const MyCartDetails = () => {
             </div>
           ) : (
             <div>
-              <div className='hidden lg:grid lg:grid-cols-7 lg:text-center lg:text-2xl lg:font-semibold lg:border-b-2'>
-                <h1 className='pb-4'>Products</h1>
-                <h1 className='pb-4'>Name</h1>
-                <h1 className='pb-4'>Size</h1>
-                <h1 className='pb-4'>Price</h1>
-                <h1 className='pb-4'>Quantity</h1>
-                <h1 className='pb-4'>Remove</h1>
-                <h1 className='pb-4'>Sub-Total</h1>
-              </div>
-              <div className='grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10'>
+              <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-5 xl:gap-10 gap-3'>
                 {currentUser[0].cart.map((item) => (
                   <div
                     key={item.id}
-                    className='flex flex-col w-52 lg:grid lg:grid-cols-7 lg:gap-5 lg:text-center lg:my-5 rounded bg-truegray-100'
+                    className='flex flex-col w-full my-5 rounded bg-truegray-100 shadow-lg'
                   >
                     <div>
                       <img
                         src={item.img[0]}
                         alt='img'
-                        className='w-9/12 lg:w-11/12 mx-auto h-40 rounded'
+                        className='w-9/12 mx-auto h-40 rounded'
                       />
                     </div>
-                    <div className='flex justify-start lg:justify-center items-center'>
-                      <h1 className='text-2xl'>{item.name}</h1>
+                    <div className='flex justify-start items-center ml-2'>
+                      <h1 className='text-lg sm:text-xl lg:text-2xl'>
+                        {item.name}
+                      </h1>
                     </div>
-                    <div className='flex justify-start lg:justify-center items-center uppercase'>
-                      <h1 className='text-2xl'>{item.sizes[0].size}</h1>
+                    <div className='flex justify-start items-center uppercase ml-2'>
+                      <h1 className='lg:text-xl'>{item.sizes[0].size}</h1>
                     </div>
-                    <div className='flex justify-start lg:justify-center items-center'>
-                      <h1 className='text-2xl'>
+                    <div className='flex justify-start items-center ml-2'>
+                      <h1 className='lg:text-xl'>
                         ${thousandsSeparatorsHandler(item.price)}
                       </h1>
                     </div>
-                    <div className='flex justify-center lg:justify-center items-center gap-5'>
+                    <div className='flex justify-center items-center gap-5 my-5'>
                       {item.count < 2 ? (
                         ''
                       ) : (
@@ -84,7 +77,7 @@ const MyCartDetails = () => {
                           <FontAwesomeIcon icon={faMinus} className='' />
                         </div>
                       )}
-                      <h1 className='text-2xl'>{item.count}</h1>
+                      <h1 className='sm:text-lg lg:text-2xl'>{item.count}</h1>
                       <div
                         onClick={() => quantityHandler(item.id, 1)}
                         className='py-1 px-2 border hover:bg-bluegray-200 rounded cursor-pointer'
@@ -92,18 +85,20 @@ const MyCartDetails = () => {
                         <FontAwesomeIcon icon={faPlus} className='' />
                       </div>
                     </div>
-                    <div className='flex justify-start lg:justify-center items-center'>
-                      <FontAwesomeIcon
-                        icon={faTrashAlt}
-                        className='text-2xl cursor-pointer text-red-400 hover:text-red-600'
-                        onClick={() => removeItemHandler(item.id)}
-                      />
-                    </div>
-                    <div className='flex justify-end lg:justify-center items-center'>
-                      <h1 className='text-2xl'>
-                        <span className='lg:hidden mr-1'>Subtotal:</span> $
+
+                    <div className='flex justify-end mr-1'>
+                      <h1 className='text-xl'>
+                        <span className='mr-1'>Subtotal:</span> $
                         {thousandsSeparatorsHandler(item.total)}
                       </h1>
+                    </div>
+                    <div className='flex justify-start items-center mt-2'>
+                      <button
+                        onClick={() => removeItemHandler(item.id)}
+                        className='w-full py-1 cursor-pointer text-white bg-red-500 hover:bg-red-600 uppercase rounded-b'
+                      >
+                        delete
+                      </button>
                     </div>
                   </div>
                 ))}
