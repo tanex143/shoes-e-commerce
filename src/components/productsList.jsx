@@ -15,6 +15,7 @@ const ProductsList = () => {
   return (
     <>
       {console.log(currentUser)}
+      {/* if user still not logged in then the login button will appear */}
       {currentUser[0].username ? (
         <div className='container mx-auto py-8 px-4'>
           <h1 className='text-center font-semibold text-5xl py-5'>

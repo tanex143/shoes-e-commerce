@@ -1,3 +1,4 @@
+// importing all the images of data
 import airforce1 from './img/air-force-1.jpg';
 import airforce2 from './img/air-force-2.jpg';
 import airforce3 from './img/air-force-3.jpg';

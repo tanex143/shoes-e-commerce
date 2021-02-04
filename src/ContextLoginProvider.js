@@ -6,37 +6,55 @@ import { productsData } from './productsData';
 export const loginContext = createContext();
 
 export const ContextLoginProvider = ({ children }) => {
+  // storing the products data.
   const [allProductsData, setAllProductsData] = useState(productsData);
+
+  // to check if the user is in the login or in the signup page.
   const [loginView, setLoginView] = useState(true);
   const [signupView, setSignupView] = useState(false);
 
+  // controlled signup input.
   const [signupInput, setSignupInput] = useState('');
   const [signupPassword, setSignupPassword] = useState('');
   const [signupCPassword, setSignupCPassword] = useState('');
 
+  // controlled login input.
   const [loginUsernameInput, setLoginUsernameInput] = useState('');
   const [loginPasswordInput, setLoginPasswordInput] = useState('');
 
+  // checking if the user already registered.
   const [validUser, setValidUser] = useState(false);
+
+  // checking if the user already registered.
   const [registeredUser, setRegisteredUser] = useState(false);
+
+  // set the total value of cart.
   const [totalValue, setTotalValue] = useState(0);
+
+  // storing user if who's logging in.
   const [currentUser, setCurrentUser] = useState([
     { id: null, username: '', password: '', cart: [] },
   ]);
 
+  // storing all the user registered the their cart.
   const [users, setUsers] = useState([
     { id: 1, username: 'admin', password: 'admin', cart: [] },
   ]);
   const history = useHistory();
 
   ////////////////////////////////////////////////////////////////////////////
+  // storing the product which clicked.
   const [productDetailsDisplay, setProductDetailsDisplay] = useState([]);
-  // const [myCart, setMyCart] = useState([]);
+
+  // modal
   const [isModalVisible, setIsModalVisible] = useState(false);
+
+  // checking if the user selected the size or not.
   const [sizeSelection, setSizeSelecttion] = useState(false);
 
   /////////////////////////////////////////////////////////////////////////////
 
+  // displaying the page if the user clicked the signup or login.
   const loginViewHandler = (choices) => {
     if (choices === 'login') {
       setLoginView(true);
@@ -48,6 +66,7 @@ export const ContextLoginProvider = ({ children }) => {
     }
   };
 
+  // checking if the user already existed.
   const signupOnChangeHandler = (e) => {
     e.preventDefault();
     setSignupInput(e.target.value);
@@ -60,6 +79,7 @@ export const ContextLoginProvider = ({ children }) => {
     filtered.length === 1 ? setValidUser(false) : setValidUser(true);
   };
 
+  // adding user that who fillup in the signup.
   const signupHandler = (e) => {
     e.preventDefault();
     const tempUsers = [...users];
@@ -93,6 +113,7 @@ export const ContextLoginProvider = ({ children }) => {
     return statusMessage;
   };
 
+  // checking if the user is registered or not.
   const loginOnChangeHandler = (e) => {
     e.preventDefault();
     setLoginPasswordInput(e.target.value);
@@ -106,6 +127,7 @@ export const ContextLoginProvider = ({ children }) => {
     filtered.length === 1 ? setRegisteredUser(false) : setRegisteredUser(true);
   };
 
+  // if the user is registered then it will add in the current user.
   const loginHandler = (e) => {
     e.preventDefault();
     let statusMessage = '';
@@ -133,6 +155,7 @@ export const ContextLoginProvider = ({ children }) => {
     return statusMessage;
   };
 
+  // if the user will logout. his data will save in the all users.
   const logoutHandler = (e) => {
     e.preventDefault();
 
@@ -152,10 +175,12 @@ export const ContextLoginProvider = ({ children }) => {
   };
 
   ///////////////////////////////////////////////////////////
+  // adding comma every 3 digit.
   const thousandsSeparatorsHandler = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
 
+  // adding the product details in state and scroll to the top.
   const productDetailsDisplayHandler = (data) => {
     setProductDetailsDisplay(data);
 
@@ -164,6 +189,7 @@ export const ContextLoginProvider = ({ children }) => {
     });
   };
 
+  // add to cart
   const addToCartHandler = (id, currentuser) => {
     let tempProducts = [...allProductsData];
     let index = tempProducts.findIndex((f) => f.id === id);
@@ -189,6 +215,7 @@ export const ContextLoginProvider = ({ children }) => {
     setSizeSelecttion(false);
   };
 
+  // incrementing and decrementing the product quantity.
   const quantityHandler = (id, quantity) => {
     let tempCart = [...currentUser];
     let index = tempCart[0].cart.findIndex((f) => f.id === id);
@@ -205,6 +232,7 @@ export const ContextLoginProvider = ({ children }) => {
     setCurrentUser(tempCart);
   };
 
+  // removing each item in cart.
   const removeItemHandler = (id) => {
     let tempProducts = [...allProductsData];
     let tempCart = [...currentUser];
@@ -227,11 +255,13 @@ export const ContextLoginProvider = ({ children }) => {
     setSizeSelecttion(false);
   };
 
+  // showing modal once clicked the add to cart button.
   const modalCancelHandler = () => {
     setIsModalVisible(false);
     setSizeSelecttion(false);
   };
 
+  // clearing the cart of that user.
   const clearCartHandler = () => {
     let tempProducts = [...allProductsData];
     let tempCart = [...currentUser];
@@ -255,6 +285,7 @@ export const ContextLoginProvider = ({ children }) => {
     });
   };
 
+  // setting the product size which user picked.
   const sizeChoiceHandler = (product, id) => {
     let index = product.sizes.findIndex((f) => f.id === id);
     let size = product.sizes[index];
@@ -268,6 +299,7 @@ export const ContextLoginProvider = ({ children }) => {
   };
   /////////////////////////////////////////////////////////
 
+  // adding the total value of the cart.
   const totalValueHandler = (user) => {
     let total = user.cart.reduce(
       (variable, currentValue) => variable + currentValue.total,

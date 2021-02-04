@@ -24,6 +24,7 @@ const Navbar = () => {
 
   return (
     <>
+      {/* if user still not logged in then the login button will appear */}
       {currentUser[0].username && (
         <div className='sm:py-3 pb-1 pt-3 bg-bluegray-200 shadow-md px-4'>
           <div className='container mx-auto'>

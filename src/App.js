@@ -31,6 +31,7 @@ const App = () => {
           <ProductDetails />
         </Route>
 
+        {/* if the url is incorrect or mispelled then it will redirect to page not found */}
         <Route component={PageNotFound} />
       </Switch>
     </>

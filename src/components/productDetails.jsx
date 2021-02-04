@@ -19,6 +19,7 @@ const ProductDetails = () => {
 
   return (
     <>
+      {/* if user still not logged in then the login button will appear */}
       {currentUser[0].username ? (
         <div className='container mx-auto px-4'>
           <h1 className='text-center text-3xl font-semibold py-8'>

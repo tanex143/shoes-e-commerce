@@ -20,6 +20,10 @@ const MyCartDetails = () => {
   return (
     <>
       {console.log('current user', currentUser)}
+      {console.log('username: sb-yijun4786510@personal.example.com')}
+      {console.log('password: p@ssw0rd')}
+
+      {/* if user still not logged in then the login button will appear */}
       {currentUser[0].username ? (
         <div className='container mx-auto px-4'>
           <h1 className='text-3xl text-center tracking-wider font-semibold py-1 my-5 uppercase bg-bluegray-300 rounded mx-auto'>
